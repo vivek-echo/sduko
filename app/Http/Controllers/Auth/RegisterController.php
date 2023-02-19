@@ -8,6 +8,11 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
+use App\Mail\RegisterUser;
 
 class RegisterController extends Controller
 {
@@ -41,33 +46,94 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
+    public function registerUser()
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        try {
+            $trans = DB::beginTransaction();
+            $getData = request()->all();
+            $res['name'] = $getData['name'];
+            $res['email'] = $getData['email'];
+            $res['userType'] = 1;
+            $res['created_at'] = now();
+            $tran =  DB::transaction(function () use ($res, $getData): void {
+
+                $insertId = DB::table('users')->insertGetId($res);
+                $mailData['userId'] = Crypt::encryptString($insertId);
+                $mailData['getData'] =   $getData;
+                $mail = Mail::to($getData['email'])->send(new RegisterUser($mailData));
+            });
+
+            if (is_null($tran)) {
+                $status = true;
+                $msg = "Activation link sent to your Email .";
+            }
+            DB::commit($trans);
+        } catch (\Exception $t) {
+            DB::rollBack($trans);
+            Log::error("Error", [
+                'Controller' => 'RegisterController',
+                'Method' => 'registerUser',
+                'Error' => $t->getMessage(),
+            ]);
+            $status = false;
+            $msg = "Something went wrong. please try again later";
+        }
+        return response()->json([
+            'status' =>  $status,
+            'message' => $msg
         ]);
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\User
-     */
-    protected function create(array $data)
+    public function changePassword()
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+        $getData = request()->all();
+        $userId = Crypt::decryptString($getData['userId']);
+        $checkUser = DB::table('users')->where('deletedFlag', 0)->where('id', $userId)->first();
+        if ($checkUser) {
+            if ($checkUser->activeStatus == 0) {
+                $view['id'] = $getData['userId'];
+                return view('auth.passwords.ChangePassword', $view);
+            } else {
+                session()->flash('msg', 'Unauthorized Access');
+                return redirect('/login');
+            }
+        } else {
+            session()->flash('msg', 'User doesnot Exist');
+            return redirect('/register');
+        }
+    }
+
+    public function updatePassword()
+    {
+        try {
+            $trans = DB::beginTransaction();
+            $getData = request()->all();
+            $userId = Crypt::decryptString($getData['userId']);
+            $updateData  = DB::transaction(function () use ($userId, $getData): void {
+                DB::table('users')->where('id', $userId)->update([
+                    'password' => Hash::make($getData['password']),
+                    'temp' => $getData['password'],
+                    'activeStatus' => 1
+                ]);
+            });
+            if (is_null($updateData)) {
+                $status = true;
+                $msg = 'Registration Process Completed';
+            }
+            DB::commit($trans);
+        } catch (\Exception $t) {
+            DB::rollBack($trans);
+            Log::error("Error", [
+                'Controller' => 'RegisterController',
+                'Method' => 'registerUser',
+                'Error' => $t->getMessage(),
+            ]);
+            $status = false;
+            $msg = "Something went wrong. please try again later";
+        }
+        return response()->json([
+            'status' =>  $status,
+            'message' => $msg
         ]);
     }
 }
