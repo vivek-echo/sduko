@@ -74,8 +74,8 @@
 					<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 						<div class="navbar-nav mainmenu">
 							<ul>
-								<li><a href="#">Login</a></li>
-								<li><a href="#">Signup</a></li>
+								<li><a href="/login">Login</a></li>
+								<li><a href="/register">Signup</a></li>
 							</ul>
 						</div>
 						<div class="header__more">
@@ -90,7 +90,7 @@
 
 
 	<!-- ================> Banner section start here <================== -->
-	<div class="banner banner--style3 padding-top bg_img" style="background-image: url(assets/images/banner/bg-3.jpg')}});">
+	<div class="banner banner--style3 padding-top bg_img" style="background-image: url({{asset('landingPage/images/banner/bg-3.jpg')}});">
 		<div class="container">
 			<div class="row g-0 justify-content-center justify-content-xl-between">
 				<div class="col-lg-5 col-12 wow fadeInLeft" data-wow-duration="1.5s">
@@ -529,7 +529,7 @@
 
 
 	<!-- ================> Work section start here <================== -->
-	<div class="work padding-top padding-bottom bg_img" style="background-image: url(assets/images/bg-img/01.jpg')}});">
+	<div class="work padding-top padding-bottom bg_img" style="background-image: url({{asset('landingPage/images/bg-img/01.jpg')}});">
 		<div class="container">
 			<div class="section__header text-center wow fadeInUp" data-wow-duration="1.5s">
 				<h2>Why Choose Safe69</h2>
