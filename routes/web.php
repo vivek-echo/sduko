@@ -22,3 +22,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/registerUser', [App\Http\Controllers\Auth\RegisterController::class, 'registerUser']);
 Route::get('/changePassword', [App\Http\Controllers\Auth\RegisterController::class, 'changePassword']);
 Route::get('/updatePassword', [App\Http\Controllers\Auth\RegisterController::class, 'updatePassword']);
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dashboard', [App\Http\Controllers\InnerPannel\Dashboard\DashboardController::class, 'index']);
+    Route::get('/getProfileData', [App\Http\Controllers\InnerPannel\Dashboard\DashboardController::class, 'getProfileData']);
+});

@@ -1,67 +1,74 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en" class="h-100">
 
-@section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Register') }}</div>
 
-                    <div class="card-body">
-                        {{-- <form method="POST" action="{{ route('register') }}">
-                            @csrf --}}
 
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">Name</label>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    {{-- <meta name="description" content="Zenix - Crypto Admin Dashboard" />
+	<meta property="og:title" content="Zenix - Crypto Admin Dashboard" />
+	<meta property="og:description" content="Zenix - Crypto Admin Dashboard" />
+	<meta property="og:image" content="page-error-404.html" />
+	<meta name="format-detection" content="telephone=no"> --}}
+    <title>SAFE69 </title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link href="{{ asset('vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/sweetalert2/dist/sweetalert2.min.css') }}" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class=" form-control name">
+</head>
 
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">Email Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control email">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">Confirm Email Address </label>
-
-                            <div class="col-md-6">
-                                <input id="confirmEmail" type="email" class="form-control confirmEmail">
-                            </div>
-                        </div>
-
-                        {{-- <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div> --}}
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary" id="resisterButton">Register
-                                </button>
-                                {{-- <a href="https://api.whatsapp.com/send?phone=7004415440">Send Message</a> --}}
+<body class="vh-100">
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <div class="authincation h-100">
+        <div class="container h-100">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-md-6">
+                    <div class="authincation-content">
+                        <div class="row no-gutters">
+                            <div class="col-xl-12">
+                                <div class="auth-form">
+                                    <div class="text-center mb-3">
+                                        <a href="/" class="brand-logo">
+                                            Place for logo
+                                        </a>
+                                    </div>
+                                    <h4 class="text-center mb-4">Sign up your account</h4>
+                                    <div class="form-group">
+                                        <label class="mb-1"><strong>Username</strong></label>
+                                        <input type="text" id="name" class="form-control"
+                                            placeholder="Enter Your Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="mb-1"><strong>Email</strong></label>
+                                        <input type="email" id="email" class="form-control"
+                                            placeholder="Enter Your Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="mb-1"><strong>Confirm Email</strong></label>
+                                        <input type="email" id="confirmEmail" class="form-control"
+                                            placeholder="Confirm Your Email">
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <button class="btn btn-primary btn-block" id="resisterButton">Sign me
+                                            up</button>
+                                    </div>
+                                    <div class="new-account mt-3">
+                                        <p>Already have an account? <a class="text-primary" href="/login">Sign in</a>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -69,26 +76,16 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!--**********************************
+ Scripts
+***********************************-->
+    <!-- Required vendors -->
+    <script src="{{ asset('vendor/global/global.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('vendor/sweetalert2/dist/sweetalert2.min.js') }}"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/main.js"></script>
     <script>
-        function errorAlert(name, sentense, ctrlId) {
-            swal(name, sentense, "error").then(function(res) {
-                if (res) {
-                    $('#' + ctrlId).css({
-                        'border-color': 'red',
-                        'box-shadow': '0px 0px 5px 2px #ff000045'
-                    });
-                    setTimeout(function() {
-                        $('#' + ctrlId).css({
-                            'border-color': '',
-                            'box-shadow': ''
-                        });
-                    }, 1000)
-                }
-            });
-        }
-
         $(document).ready(function() {
             $('#resisterButton').on('click', function() {
                 var name = $('#name').val();
@@ -113,33 +110,36 @@
                 swal({
                         title: "Are you sure?",
                         text: "Are you Sure You want to register",
-                        icon: "warning",
-                        buttons: true,
-                        dangerMode: true,
+                        type: "info",
+                        showCancelButton: !0,
+                        closeOnConfirm: !1,
+                        showLoaderOnConfirm: !0
                     })
                     .then((willDelete) => {
                         if (willDelete) {
+                            $('#preloader').fadeIn();
                             $.ajax({
                                 url: "{{ url('/registerUser') }}",
-                                data:{
-                                    name:name,
-                                    email:email
+                                data: {
+                                    name: name,
+                                    email: email
                                 },
                                 success: function(res) {
+                                    $('#preloader').fadeOut();
                                     if (res.status == true) {
-                                            swal("Successfull", res.message, "success")
-                                                .then(function(res) {
-                                                    if (res) {
-                                                        var loc = window.location;
-                                                        window.location = loc
-                                                            .origin +
-                                                            "/register"
-                                                    }
-                                                });
-                                        } else {
+                                        swal("Successfull", res.message, "success")
+                                            .then(function(res) {
+                                                if (res) {
+                                                    var loc = window.location;
+                                                    window.location = loc
+                                                        .origin +
+                                                        "/register"
+                                                }
+                                            });
+                                    } else {
 
-                                            swal("Error", res.message, "error")
-                                        }
+                                        swal("Error", res.message, "error")
+                                    }
                                 }
                             });
 
@@ -150,4 +150,7 @@
 
         })
     </script>
-@endsection
+    {{-- <script src="js/styleSwitcher.js"></script> --}}
+</body>
+
+</html>
