@@ -105,7 +105,7 @@
 				</div>
 				<div class="col-lg-6 col-12 wow fadeInUp" data-wow-duration="1.5s">
 					<div class="banner__thumb text-xl-end">
-						<img src="{{ asset('landingpage/images/banner/04.png')}}" alt="banner">
+						<img src="{{ asset('landingpage/images/banner/rr.png')}}" alt="banner">
 						<div class="banner__thumb--shape">
 							<div class="shapeimg">
 								<img src="{{ asset('landingpage/images/banner/shape/home3/01.png')}}" alt="dating thumb">
