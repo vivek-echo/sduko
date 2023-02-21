@@ -11,7 +11,7 @@ class PostController extends Controller
         return view('InnerPannel.Post.ViewPost');
     }
 
-    public function add(){
+    public function addPost(){
         return view('InnerPannel.Post.AddPost');
     }
 

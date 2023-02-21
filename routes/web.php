@@ -28,4 +28,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/getProfileData', [App\Http\Controllers\InnerPannel\Dashboard\DashboardController::class, 'getProfileData']);
     Route::get('/viewPost', [App\Http\Controllers\InnerPannel\Post\PostController::class, 'index']);
     Route::get('/AddPost', [App\Http\Controllers\InnerPannel\Post\PostController::class, 'addPost']);
+    Route::get('/getState', [App\Http\Controllers\Controller::class, 'getState']);
+    Route::get('/getCity', [App\Http\Controllers\Controller::class, 'getCity']);
 });
