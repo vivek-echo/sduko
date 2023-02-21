@@ -21,9 +21,17 @@
     <link href="{{ asset('vendor/sweetalert2/dist/sweetalert2.min.css') }}" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <style>
+        .layout-image {
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+        }
+    </style>
+
 </head>
 
-<body class="vh-100">
+<body class="vh-100 position-relative" style="background :  center / cover no-repeat url('{{asset('landingPage/images/banner/bg-3.jpg')}}')">
     <div id="preloader">
         <div class="sk-three-bounce">
             <div class="sk-child sk-bounce1"></div>
@@ -31,9 +39,13 @@
             <div class="sk-child sk-bounce3"></div>
         </div>
     </div>
+    {{-- <div class="layout-image">
+         <img src="{{asset('landingPage/images/banner/ss.png')}}" alt="" width="40%">
+    </div> --}}
     <div class="authincation h-100">
+       
         <div class="container h-100">
-            <div class="row justify-content-center h-100 align-items-center">
+            <div class="row justify-content-end h-100 align-items-center">
                 <div class="col-md-6">
                     <div class="authincation-content">
                         <div class="row no-gutters">

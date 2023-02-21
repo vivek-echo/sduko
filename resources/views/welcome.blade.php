@@ -96,8 +96,8 @@
 				<div class="col-lg-5 col-12 wow fadeInLeft" data-wow-duration="1.5s">
 					<div class="banner__content">
 						<div class="banner__title">
-							<h2>We Have More Than <span>2.000.000</span> Join Members</h2>
-							<p>Still looking for your significant other? Ollya is the place for you! Join now to meet
+							<h2>Your Desire <br><span>Ends</span> Here</h2>
+							<p>Still looking for your significant other? Safe69 is the place for you! Join now to meet
 								single men and women worldwide.</p>
 							<a href="register.html" class="default-btn style-2"><span>Registration Now</span></a>
 						</div>

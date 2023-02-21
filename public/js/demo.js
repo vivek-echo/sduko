@@ -250,7 +250,7 @@ function deleteAllCookie(reload = true)
 				var optionData = getCookie(optionKey);
 				themeOptionArr[optionKey] = (optionData != '')?optionData:dezSettingsOptions[optionKey];
 			});
-			console.log(themeOptionArr);
+			themeOptionArr.version ="dark";
 			dezSettingsOptions = themeOptionArr;
 			new dezSettings(dezSettingsOptions);
 			

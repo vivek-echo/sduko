@@ -389,7 +389,7 @@
 		$_SELECT_PICKER.selectpicker();
 	}
 	var handleThemeMode = function() {
-	
+		jQuery('body').attr('data-theme-version','dark');
 		jQuery('.dz-theme-mode').on('click',function(){
 			jQuery(this).toggleClass('active');
 			

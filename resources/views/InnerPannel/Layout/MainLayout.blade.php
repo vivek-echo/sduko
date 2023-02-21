@@ -23,7 +23,7 @@
 
 </head>
 
-<body>
+<body >
 
     <!--*******************
         Preloader start
@@ -268,12 +268,9 @@
 
 
     <script>
-        // jQuery(document).ready(function() {
-        //     setTimeout(function() {
-        //         dezSettingsOptions.version = 'dark';
-        //         new dezSettings(dezSettingsOptions);
-        //     }, 100)
-        // });
+        // dezSettingsOptions.version = 'dark';
+        // new dezSettings(dezSettingsOptions);
+        jQuery('body').attr('data-theme-version','dark');
 
         $(document).ready(function() {
             $('#preloader').fadeIn();
@@ -284,7 +281,7 @@
                     $("#userNameAA").html(res.data.name);
                     $('#email').html(res.data.email);
                     $('#userType').html(res.data.userType);
-                    $('#preloader').fadeOut();  
+                    $('#preloader').fadeOut();
                 }
             });
         })

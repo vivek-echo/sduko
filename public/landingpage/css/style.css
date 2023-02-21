@@ -2114,7 +2114,7 @@ iframe {
   color: #a650ff;
 }
 .banner__inputlist input {
-  width: auto;
+  /* width: auto; */
 }
 .banner__inputlist input.male {
   accent-color: #f24570;
@@ -2267,7 +2267,8 @@ iframe {
   }
 }
 .banner--style3 .banner__thumb--shape .shapeimg {
-  top: 70px;
+  /* top: 70px; */
+  top: 0;
   left: -150px;
   z-index: 1;
   animation: up-down 5s infinite ease-in-out;
@@ -2278,7 +2279,8 @@ iframe {
   }
 }
 .banner--style3 .banner__thumb--title h4 {
-  top: 110px;
+  /* top: 110px; */
+  top: 40px;
   left: -100px;
   max-width: 150px;
   z-index: 1;

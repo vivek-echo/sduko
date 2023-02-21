@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="vh-100">
+<body class="vh-100" style="background :  center / cover no-repeat url('{{asset('landingPage/images/banner/bg-3.jpg')}}')">
     <div id="preloader">
         <div class="sk-three-bounce">
             <div class="sk-child sk-bounce1"></div>
