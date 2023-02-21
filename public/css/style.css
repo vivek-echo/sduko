@@ -2,11 +2,7 @@
 /*
     Table of Contents
 
-    Name                 : Zenix
-    Author               : DexignZone
-    Author Portfolio     : https://themeforest.net/user/dexignzone/portfolio
-    
-
+    Name                 : Safe69
 
     Table of Sass Contents
 
@@ -8311,7 +8307,7 @@ a {
   box-shadow: none; }
 
 .text-primary {
-  color: var(--primary) !important; }
+  color: #d8335c !important; }
 
 .bg-primary {
   background-color: var(--primary) !important; }
@@ -21389,11 +21385,11 @@ button {
     background-color: transparent; }
 
 .btn-primary {
-  border-color: #13265e;
-  background-color: #13265e; }
+  border-color: #f24570;
+  background-color: #f24570; }
   .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-    border-color: var(--primary-hover);
-    background-color: var(--primary-hover); }
+    border-color: #d8335c;
+    background-color: #d8335c; }
   .btn-primary:focus {
     box-shadow: 0 0 0 0.25rem var(--rgba-primary-5); }
   .btn-primary:disabled, .btn-primary.disabled {

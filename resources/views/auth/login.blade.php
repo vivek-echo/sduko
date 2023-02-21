@@ -56,7 +56,7 @@
                                         @csrf
                                         <div class="text-center mb-3">
                                             <a href="/" class="brand-logo">
-                                                Place for logo
+                                                <img src="{{asset('images/safe69-dark.png')}}" alt="" style="height:50px">
                                             </a>
                                         </div>
                                         <h4 class="text-center mb-4">Login to your account</h4>
