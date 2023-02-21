@@ -39,9 +39,9 @@
             <div class="sk-child sk-bounce3"></div>
         </div>
     </div>
-    {{-- <div class="layout-image">
+    <div class="layout-image">
          <img src="{{asset('landingPage/images/banner/ss.png')}}" alt="" width="40%">
-    </div> --}}
+    </div>
     <div class="authincation h-100">
        
         <div class="container h-100">
