@@ -525,12 +525,38 @@ body img {
   background-color: #213366 !important;
 }
 
+
+.modal-dialog-scrollable::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
+	background-color: #F5F5F5 !important;
+}
+
+.modal-dialog-scrollable::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5 !important;
+}
+
+.modal-dialog-scrollable::-webkit-scrollbar-thumb
+{
+	background-color: #000000 !important;
+}
+
+.modal {
+  z-index: 100000;
+}
+
 .modal-content {
   background-color: #213366;
 }
 
 .modal-header {
   border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.modal-footer {
+  border-top: 1px solid #2e5174 !important;
 }
 
 @keyframes ripple {
@@ -5637,8 +5663,9 @@ a[class*=lightcase-icon-] {
 .shop-single .product-details {
   padding: 20px;
   margin-bottom: 40px;
-  box-shadow: 0 0 10px rgba(136, 136, 136, 0.1);
+  /* box-shadow: 0 0 10px rgba(136, 136, 136, 0.1); */
   background: #213366;
+  border: 1px solid #384979;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -5782,7 +5809,8 @@ a[class*=lightcase-icon-] {
 }
 .shop-single .review {
   background: #213366;
-  box-shadow: 0 0 10px rgba(136, 136, 136, 0.1);
+  /* box-shadow: 0 0 10px rgba(136, 136, 136, 0.1); */
+  border: 1px solid #384979;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
