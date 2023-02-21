@@ -26,6 +26,7 @@
             position: absolute;
             bottom: 0;
             left: 10%;
+            z-index: -1;
         }
     </style>
 

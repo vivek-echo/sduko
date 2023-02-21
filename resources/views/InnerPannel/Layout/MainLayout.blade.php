@@ -23,7 +23,7 @@
 
 </head>
 
-<body >
+<body>
 
     <!--*******************
         Preloader start
@@ -188,6 +188,10 @@
                             <i class="flaticon-144-layout"></i>
                             <span class="nav-text">Dashboard</span>
                         </a>
+                    <li><a href="/viewPost" id="postLink">
+                            <i class="flaticon-061-puzzle"></i>
+                            <span class="nav-text">Posts</span>
+                        </a>
 
 
                     </li>
@@ -270,7 +274,6 @@
     <script>
         // dezSettingsOptions.version = 'dark';
         // new dezSettings(dezSettingsOptions);
-        jQuery('body').attr('data-theme-version','dark');
 
         $(document).ready(function() {
             $('#preloader').fadeIn();

@@ -26,4 +26,6 @@ Route::get('/updatePassword', [App\Http\Controllers\Auth\RegisterController::cla
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [App\Http\Controllers\InnerPannel\Dashboard\DashboardController::class, 'index']);
     Route::get('/getProfileData', [App\Http\Controllers\InnerPannel\Dashboard\DashboardController::class, 'getProfileData']);
+    Route::get('/viewPost', [App\Http\Controllers\InnerPannel\Post\PostController::class, 'index']);
+    Route::get('/AddPost', [App\Http\Controllers\InnerPannel\Post\PostController::class, 'addPost']);
 });
