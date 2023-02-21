@@ -21389,8 +21389,8 @@ button {
     background-color: transparent; }
 
 .btn-primary {
-  border-color: var(--primary);
-  background-color: var(--primary); }
+  border-color: #13265e;
+  background-color: #13265e; }
   .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
     border-color: var(--primary-hover);
     background-color: var(--primary-hover); }
