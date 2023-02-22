@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,4 +32,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::match(['GET', 'POST'], '/uploadData', [App\Http\Controllers\InnerPannel\Post\PostController::class, 'uploadData']);
     Route::get('/getState', [App\Http\Controllers\Controller::class, 'getState']);
     Route::get('/getCity', [App\Http\Controllers\Controller::class, 'getCity']);
+    Route::get('storage/{filename}', function ($filename) {
+        $path = storage_path('public/' . $filename);
+
+        if (!File::exists($path)) {
+            abort(404);
+        }
+
+        $file = File::get($path);
+        $type = File::mimeType($path);
+
+        $response = Response::make($file, 200);
+        $response->header("Content-Type", $type);
+
+        return $response;
+    });
 });

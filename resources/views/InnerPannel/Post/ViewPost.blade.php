@@ -1,6 +1,7 @@
 @extends('InnerPannel.Layout.MainLayout')
 
 @section('content')
+
 <div class="card">
     <div class="card-header">
         <h5 class="card-title">Post Your Ads</h5>
@@ -15,83 +16,38 @@
         </ul>
 
         <div class="table-responsive mt-4">
-            <table id="example" class="display" style="min-width: 845px">
+            <table  class="table table-responsive-md" >
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Image</th>
                         <th>Post Heading</th>
-                        <th>Type</th>
-                        <th>Region</th>
-                        <th>City</th>
-                        <th>Age(Yrs)</th>
                         <th>Date</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td><img class="rounded" width="80" src="images/profile/small/pic1.jpg" alt=""></td>
-                        <td>Test Heading</td>
-                        <td>Escorts</td>
-                        <td>Jharkhand</td>
-                        <td>Ranchi</td>
-                        <td>25</td>
-                        <td>22/02/2023</td>
-                        <td>
-                            <div class="d-flex">
-                                <a href="#" title="Edit" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="#" title="View" class="btn btn-info shadow btn-xs sharp me-1"><i class="fas fa-eye"></i></a>
-                                <a href="#" title="Delete" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                            </div>												
-                        </td>	
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td><img class="rounded" width="80" src="images/profile/small/pic1.jpg" alt=""></td>
-                        <td>Test Heading</td>
-                        <td>Escorts</td>
-                        <td>Jharkhand</td>
-                        <td>Ranchi</td>
-                        <td>25</td>
-                        <td>22/02/2023</td>
-                        <td>
-                            <div class="d-flex">
-                                <a href="#" title="Edit" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="#" title="View" class="btn btn-info shadow btn-xs sharp me-1"><i class="fas fa-eye"></i></a>
-                                <a href="#" title="Delete" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                            </div>												
-                        </td>	
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td><img class="rounded" width="80" src="images/profile/small/pic1.jpg" alt=""></td>
-                        <td>Test Heading</td>
-                        <td>Escorts</td>
-                        <td>Jharkhand</td>
-                        <td>Ranchi</td>
-                        <td>25</td>
-                        <td>22/02/2023</td>
-                        <td>
-                            <div class="d-flex">
-                                <a href="#" title="Edit" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="#" title="View" class="btn btn-info shadow btn-xs sharp me-1"><i class="fas fa-eye"></i></a>
-                                <a href="#" title="Delete" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                            </div>												
-                        </td>	
-                    </tr>
+                    <?php foreach($pageData as $key=>$val){ ?>
+                        <tr>
+                            <td><?php echo $val['sl']; ?></td>
+                            <td><img class="rounded" width="120" src="{{ asset('storage/'.$val['image'].'')}}" alt=""></td>
+                            <td><?php echo $val['postHeading']; ?></td>
+                            <td><?php echo $val['createdOn']; ?></td>
+                            <td><?php echo "cjnshcbnh" ?></td>
+                            <td></td>
+                        </tr>
+                        <?php }?>
+                  
+                    
                 </tbody>
                 <tfoot>
                     <tr>
                         <th>#</th>
                         <th>Image</th>
-                        <th>Heading</th>
-                        <th>Type</th>
-                        <th>Region</th>
-                        <th>City</th>
-                        <th>Age(Yrs)</th>
+                        <th>Post Heading</th>
                         <th>Date</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </tfoot>
@@ -100,7 +56,9 @@
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
 <script>
   
 </script>
+
 @endsection
