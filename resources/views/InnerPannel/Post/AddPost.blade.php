@@ -20,7 +20,8 @@
                     </div>
                     <div class="card-body">
                         <div class="basic-form">
-
+                            <form method="POST" action="/uploadData" enctype="multipart/form-data">
+                                {{ csrf_field() }}
                             <div class="mb-3 row">
                                 <label class="col-sm-3 col-form-label">Service Type</label>
                                 <div class="col-sm-9">
@@ -82,16 +83,16 @@
                                 </div>
                             </div>
                             <div class="mb-3 row">
-                                <input type="file" id="chooseFiledum" multiple="multiple"
+                                <input type="file" id="chooseFiledum" name="chooseFiledum[]" multiple="multiple"
                                     accept="image/jpeg, image/png, image/jpg">
                                 <div id="outFile">
 
                                 </div>
                             </div>
-
+                        </form>
                             <div class="mb-3 row">
                                 <div class="col-sm-10">
-                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                    <button type="submit" id="subButton" class="btn btn-primary">Sign in</button>
                                 </div>
                             </div>
 
@@ -105,8 +106,9 @@
         <script>
             const output = document.getElementById("output")
             const input = document.getElementById("chooseFiledum")
-            let imagesArray = []
+            let imagesArray = [] ;
             input.addEventListener("change", () => {
+                imagesArray = [];
                 const files = input.files
                 for (let i = 0; i < files.length; i++) {
                     imagesArray.push(files[i])
@@ -134,6 +136,10 @@
             }
 
             $(document).ready(function() {
+                $('#subButton').on('click',function(){
+                    $('form').submit();
+                    // console.log($('#chooseFiledum').val());
+                })
 
                 $.ajax({
                     url: "{{ url('/getState') }}",
