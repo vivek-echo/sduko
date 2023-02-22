@@ -28544,4 +28544,10 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
     [data-theme-version="dark"] .footer .copyright p {
       color: #fff; }
 
-/*# sourceMappingURL=style.css.map */
+.position-custom-cross {
+  position: absolute;
+  top: -12px;
+  right: 18px;
+  font-size: 2rem;
+}
+

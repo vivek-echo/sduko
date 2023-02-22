@@ -91,10 +91,15 @@
                                         </div>
                                        
                                     </div>
-                                    <div id="outFile">
-
+                                </div>
+                                <div id="uploadedImages" class="mb-3 row" style="display: none;">
+                                    <label class="col-sm-3 col-form-label text-start">Uploaded Images</label>
+                                    <div class="col-sm-9">
+                                        <div id="outFile" class="row">
+    
+                                        </div>
+                                       
                                     </div>
-                                    
                                 </div>
                             </form>
                                     <button type="submit" id="subButton" class="btn btn-primary float-start mt-3">Sign in</button>
@@ -122,11 +127,12 @@
 
 
             function displayImages() {
+                $('#uploadedImages').show();
                 let images = ""
                 imagesArray.forEach((image, index) => {
-                    images += `<div class="image">
-                <img src="${URL.createObjectURL(image)}" alt="image">
-                <a onclick="deleteImage(${index})" href="javascript:void(0)">&times;</a>
+                    images += `<div class="col-sm-3 image position-relative">
+                <img class="img-thumbnail" src="${URL.createObjectURL(image)}" width="200" alt="image">
+                <a class="position-custom-cross btn-close" onclick="deleteImage(${index})" href="javascript:void(0)"></a>
               </div>`
                 })
                 $(document).ready(function() {
@@ -135,10 +141,14 @@
             }
 
             function deleteImage(index) {
+                
                 imagesArray.splice(index, 1)
                 displayImages()
                 $(document).ready(function() {
                 $('#chooseFiledum').val('');
+                if(index == 0) {
+                    $('#uploadedImages').hide();
+                }
                 })
 
             }
