@@ -1,7 +1,7 @@
 @extends('InnerPannel.Layout.MainLayout')
 
 @section('content')
-    <div class="card text-center">
+    <div class="card">
         <div class="card-header">
             <h5 class="card-title">Post Your Ads</h5>
         </div>
@@ -89,7 +89,7 @@
                                             <input type="file" id="chooseFiledum" name="chooseFiledum[]" multiple="multiple" class="form-file-input form-control"
                                             accept="image/jpeg, image/png, image/jpg">
                                         </div>
-                                       
+                                        <code>Note - Upload single image or multiple images.</code>
                                     </div>
                                 </div>
                                 <div id="uploadedImages" class="mb-3 row" style="display: none;">
@@ -102,7 +102,7 @@
                                     </div>
                                 </div>
                             </form>
-                                    <button type="submit" id="subButton" class="btn btn-primary float-start mt-3">Sign in</button>
+                                    <button type="submit" id="subButton" class="btn btn-primary float-start mt-3">Post</button>
 
                         </div>
                     </div>

@@ -8807,7 +8807,7 @@ a {
   left: 0;
   top: 0;
   background-color: #fff; 
-  z-index: 1;
+  z-index: 11;
 }
 
 .sk-three-bounce {
@@ -8815,7 +8815,7 @@ a {
   width: 100%;
   height: 100%;
   text-align: center;
-  background-color: white; }
+  background-color: #473F72; }
 
 .sk-three-bounce .sk-child {
   position: relative;
@@ -8823,7 +8823,7 @@ a {
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  background-color: var(--primary);
+  background-color: #f24570;
   border-radius: 100%;
   display: inline-block;
   -webkit-animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;
@@ -22485,9 +22485,9 @@ code {
   padding: 0.125rem 0.3125rem;
   border-radius: 0.1875rem;
   background: #ffebe9;
-  color: #FF4C41; }
+  color: #f24570; }
   [data-theme-version="dark"] code {
-    background: rgba(255, 76, 65, 0.1); }
+    background: rgba(242, 69, 112, 0.1); }
 
 .heading-labels {
   color: #333333; }
@@ -23192,12 +23192,12 @@ code {
   .custom-tab-1 .nav-link:focus, .custom-tab-1 .nav-link:hover, .custom-tab-1 .nav-link.active {
     color: #495057;
     background-color: #fff;
-    border-color: var(--primary);
+    border-color: #f24570;
     border-radius: 0;
     color: var(--primary);
     border-width: 0 0rem 0.1875rem 0; }
     [data-theme-version="dark"] .custom-tab-1 .nav-link:focus, [data-theme-version="dark"] .custom-tab-1 .nav-link:hover, [data-theme-version="dark"] .custom-tab-1 .nav-link.active {
-      background-color: var(--rgba-primary-1); }
+      background-color: rgb(242 69 112 / 10%); }
 
 .nav-pills.light .nav-link.active,
 .nav-pills.light .show > .nav-link {
@@ -24400,7 +24400,7 @@ table.dataTable.style-1 thead th {
       border-radius: 4px;
       background: transparent !important; }
       .dataTables_wrapper .dataTables_paginate span .paginate_button.current, .dataTables_wrapper .dataTables_paginate span .paginate_button:hover, .dataTables_wrapper .dataTables_paginate span .paginate_button:focus, .dataTables_wrapper .dataTables_paginate span .paginate_button:active {
-        background: var(--primary) !important;
+        background: #ea7492 !important;
         color: #fff !important; }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
@@ -28547,7 +28547,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
 .position-custom-cross {
   position: absolute;
   top: -12px;
-  right: 18px;
+  right: 5px;
   font-size: 2rem;
 }
 

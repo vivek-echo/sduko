@@ -17,6 +17,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <link rel="stylesheet" href="vendor/chartist/css/chartist.min.css">
     <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
@@ -259,7 +260,9 @@
     <script src="js/dashboard/dashboard-1.js"></script>
 
     {{-- <script src="vendor/owl-carousel/owl.carousel.js"></script> --}}
-    `
+    <!-- Datatable -->
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/deznav-init.js"></script>
     <script src="js/demo.js"></script>
