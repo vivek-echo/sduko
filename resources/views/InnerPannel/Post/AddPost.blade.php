@@ -97,11 +97,7 @@
                                     
                                 </div>
                             </form>
-                            <div class="mb-3 row">
-                                <div class="col-sm-10">
-                                    <button type="submit" id="subButton" class="btn btn-primary">Sign in</button>
-                                </div>
-                            </div>
+                                    <button type="submit" id="subButton" class="btn btn-primary float-start mt-3">Sign in</button>
 
                         </div>
                     </div>

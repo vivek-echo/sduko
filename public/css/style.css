@@ -8858,7 +8858,7 @@ a {
     transform: scale(1); } }
 
 .footer {
-  padding-left: 17.5rem;
+  padding-left: -1.5rem;
   background-color: #fff; }
   .footer .copyright {
     padding: 0.9375rem; }
@@ -19023,8 +19023,9 @@ svg text {
   border: 0.0625rem solid #EEEEEE;
   background: #fff; }
   [data-theme-version="dark"] .form-file {
-    background: #2C254A;
-    border-color: #473F72; }
+    background: transparent;
+    border-color: #5b5289;
+    border-radius: 0.35rem; }
 
 .input-group {
   /* &> .form-file {
@@ -19051,7 +19052,7 @@ svg text {
   border-radius: 0;
   border: 0;
   height: auto;
-  line-height: 28px;
+  line-height: 36px;
   margin-left: -8px; }
 
 .form-group {
