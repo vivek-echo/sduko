@@ -15,81 +15,88 @@
             </ul>
             <div class="col-xl-8 col-lg-12">
                 <div class="card">
-                    <div class="card-header">
+                    {{-- <div class="card-header">
                         <h4 class="card-title">Vertical Form</h4>
-                    </div>
+                    </div> --}}
                     <div class="card-body">
                         <div class="basic-form">
                             <form method="POST" action="/uploadData" enctype="multipart/form-data">
                                 {{ csrf_field() }}
-                            <div class="mb-3 row">
-                                <label class="col-sm-3 col-form-label">Service Type</label>
-                                <div class="col-sm-9">
-                                    <select name="" id="serviceType" class="form-select">
-                                        <option value="">--Select--</option>
-                                        <option value="1">Massage</option>
-                                        <option value="2">Male Escort</option>
-                                        <option value="3">Female Escort</option>
+                                <div class="mb-3 row">
+                                    <label class="col-sm-3 col-form-label text-start">Service Type</label>
+                                    <div class="col-sm-9">
+                                        <select name="" id="serviceType" class="form-select">
+                                            <option value="">--Select--</option>
+                                            <option value="1">Massage</option>
+                                            <option value="2">Male Escort</option>
+                                            <option value="3">Female Escort</option>
 
-                                    </select>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label class="col-sm-3 col-form-label">Select Region</label>
-                                <div class="col-sm-9">
-                                    <select name="stateId" id="stateId" class="form-select">
-                                        <option value="">Loading .....</option>
+                                <div class="mb-3 row">
+                                    <label class="col-sm-3 col-form-label text-start">Select Region</label>
+                                    <div class="col-sm-9">
+                                        <select name="stateId" id="stateId" class="form-select">
+                                            <option value="">Loading .....</option>
 
-                                    </select>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label class="col-sm-3 col-form-label">Select City</label>
-                                <div class="col-sm-9">
-                                    <select name="cityId" id="cityId" class="form-select">
-                                        <option value="">--Select--</option>
+                                <div class="mb-3 row">
+                                    <label class="col-sm-3 col-form-label text-start">Select City</label>
+                                    <div class="col-sm-9">
+                                        <select name="cityId" id="cityId" class="form-select">
+                                            <option value="">--Select--</option>
 
-                                    </select>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label class="col-sm-3 col-form-label">Post Heading</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="postHeading">
+                                <div class="mb-3 row">
+                                    <label class="col-sm-3 col-form-label text-start">Post Heading</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="postHeading">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label class="col-sm-3 col-form-label">Post Description</label>
-                                <div class="col-sm-9">
-                                    <textarea rows="4" cols="50" class="form-control" id="postDescription"></textarea>
+                                <div class="mb-3 row">
+                                    <label class="col-sm-3 col-form-label text-start">Post Description</label>
+                                    <div class="col-sm-9">
+                                        <textarea rows="4" cols="50" class="form-control" id="postDescription"></textarea>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label class="col-sm-3 col-form-label">Model Age</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="modelAge">
+                                <div class="mb-3 row">
+                                    <label class="col-sm-3 col-form-label text-start">Model Age</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="modelAge">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label class="col-sm-3 col-form-label">Phone Number</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="phoneNo">
+                                <div class="mb-3 row">
+                                    <label class="col-sm-3 col-form-label text-start">Phone Number</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="phoneNo">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label class="col-sm-3 col-form-label">WhatsApp Number</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="WhatsApp">
+                                <div class="mb-3 row">
+                                    <label class="col-sm-3 col-form-label text-start">WhatsApp Number</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="WhatsApp">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <input type="file" id="chooseFiledum" name="chooseFiledum[]" multiple="multiple"
-                                    accept="image/jpeg, image/png, image/jpg">
-                                <div id="outFile">
+                                <div class="mb-3 row">
+                                    <label class="col-sm-3 col-form-label text-start">Upload Image</label>
+                                    <div class="col-sm-9">
+                                        <div class="form-file">
+                                            <input type="file" id="chooseFiledum" name="chooseFiledum[]" multiple="multiple" class="form-file-input form-control"
+                                            accept="image/jpeg, image/png, image/jpg">
+                                        </div>
+                                       
+                                    </div>
+                                    <div id="outFile">
 
+                                    </div>
+                                    
                                 </div>
-                            </div>
-                        </form>
+                            </form>
                             <div class="mb-3 row">
                                 <div class="col-sm-10">
                                     <button type="submit" id="subButton" class="btn btn-primary">Sign in</button>
@@ -106,7 +113,7 @@
         <script>
             const output = document.getElementById("output")
             const input = document.getElementById("chooseFiledum")
-            let imagesArray = [] ;
+            let imagesArray = [];
             input.addEventListener("change", () => {
                 imagesArray = [];
                 const files = input.files
@@ -116,7 +123,7 @@
                 displayImages()
             })
 
-           
+
 
             function displayImages() {
                 let images = ""
@@ -130,13 +137,18 @@
                     $('#outFile').html(images)
                 })
             }
+
             function deleteImage(index) {
                 imagesArray.splice(index, 1)
                 displayImages()
+                $(document).ready(function() {
+                $('#chooseFiledum').val('');
+                })
+
             }
 
             $(document).ready(function() {
-                $('#subButton').on('click',function(){
+                $('#subButton').on('click', function() {
                     $('form').submit();
                     // console.log($('#chooseFiledum').val());
                 })
