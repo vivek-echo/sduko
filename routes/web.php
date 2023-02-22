@@ -27,5 +27,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [App\Http\Controllers\InnerPannel\Dashboard\DashboardController::class, 'index']);
     Route::get('/getProfileData', [App\Http\Controllers\InnerPannel\Dashboard\DashboardController::class, 'getProfileData']);
     Route::get('/viewPost', [App\Http\Controllers\InnerPannel\Post\PostController::class, 'index']);
-    Route::get('/AddPost', [App\Http\Controllers\InnerPannel\Post\PostController::class, 'addPost']);
+    Route::match(['GET', 'POST'], '/AddPost', [App\Http\Controllers\InnerPannel\Post\PostController::class, 'addPost']);
+    Route::match(['GET', 'POST'], '/uploadData', [App\Http\Controllers\InnerPannel\Post\PostController::class, 'uploadData']);
+    Route::get('/getState', [App\Http\Controllers\Controller::class, 'getState']);
+    Route::get('/getCity', [App\Http\Controllers\Controller::class, 'getCity']);
 });
