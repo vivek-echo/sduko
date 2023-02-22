@@ -28496,11 +28496,11 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   color: #b3b3b3; }
 
 [data-theme-version="dark"] .deznav .metismenu > li:hover > a, [data-theme-version="dark"] .deznav .metismenu > li:focus > a, [data-theme-version="dark"] .deznav .metismenu > li.mm-active > a {
-  color: #f24570; }
+  color: #ec6385; }
   [data-theme-version="dark"] .deznav .metismenu > li:hover > a::after, [data-theme-version="dark"] .deznav .metismenu > li:focus > a::after, [data-theme-version="dark"] .deznav .metismenu > li.mm-active > a::after {
     border-color: #fff; }
   [data-theme-version="dark"] .deznav .metismenu > li:hover > a i, [data-theme-version="dark"] .deznav .metismenu > li:focus > a i, [data-theme-version="dark"] .deznav .metismenu > li.mm-active > a i {
-    color: #f24570; }
+    color: #ec6385; }
 
 [data-theme-version="dark"] .deznav .metismenu > li.mm-active ul ul {
   background-color: transparent; }
