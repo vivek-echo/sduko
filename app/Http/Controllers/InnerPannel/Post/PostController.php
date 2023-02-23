@@ -36,7 +36,7 @@ class PostController extends Controller
         $respData['city']= $data->city;
         $respData['phoneNo']= $data->phoneNo;
         $respData['whatsApp']= $data->whatsApp;
-        $respData['image']= DB::table('postimage')->where('postId',$respData['pId'])->first()->image;
+        $respData['image']= DB::table('postimage')->where('postId',$respData['pId'])->where('deletedFlag',0)->first()->image;
         array_push($respnse, $respData);
        }
        $res['pageData'] = $respnse;
@@ -100,5 +100,15 @@ class PostController extends Controller
         $res['msg']=$msg;
         session()->flash('msg', $msg);
         return redirect('/AddPost');
+    }
+    public function viewPostData(){
+        $getData = request()->all();
+       $queryData = DB::table('posttable as PT')
+       ->where('PT.deletedFlag',0)->selectRaw('PT.pId,PT.postHeading,PT.createdOn,PT.status,PT.postDesc,PT.modelAge,PT.state,PT.city,PT.phoneNo,PT.whatsApp,PT.serviceType')->where('pId',$getData['id'])->first();
+       $images = DB::table('postimage')->where('postId',$getData['id'])->where('deletedFlag',0)->get();
+       return response()->json([
+        'data' => $queryData,
+        'images'=>$images
+    ]);
     }
 }

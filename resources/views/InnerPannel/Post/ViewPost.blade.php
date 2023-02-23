@@ -45,18 +45,20 @@
                                 }
                             
                             ?></td>
-                            <td>
-                                <div class="d-flex">
-                                    <a href="#" title="View" class="btn btn-info shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target=".view-Modal"><i class="fas fa-eye"></i></a>
+                            <td >
+                                <div class="d-flex justify-content-center">
+                                    <a href="javascript:void(0);" title="View" class="btn btn-info shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target=".view-Modal" onclick="viewPostModal(<?php echo $val['pId'] ; ?>)"><i class="fas fa-eye"></i></a>
                                     <a href="#" title="Delete" class="btn btn-danger shadow btn-xs sharp me-1"><i class="fa fa-trash"></i></a>
                                     <a href="#" title="Take Action" class="btn btn-primary shadow btn-xs sharp"><i class="fas fa-cog"></i></a>
                                 </div>
                             </td>
                         </tr>
+                        
                         <?php }?>
                   
-                    
+                       
                 </tbody>
+               
                 <tfoot>
                     <tr>
                         <th class="text-center">#</th>
@@ -88,58 +90,45 @@
                             <label class="col-sm-2 col-form-label">Service Type</label>
                             <label class="col-sm-1 col-form-label">:</label>
                             <div class="col-sm-9">
-                                <label class="col-form-label fw-bold text-white">Escorts</label>
+                                <label class="col-form-label fw-bold text-white" ><span id="Loading....modalService"></span></label>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label">Region</label>
                             <label class="col-sm-1 col-form-label">:</label>
                             <div class="col-sm-9">
-                                <label class="col-form-label fw-bold text-white">Delhi</label>
+                                <label class="col-form-label fw-bold text-white"><span id="modalState">Loading....</span></label>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label">City</label>
                             <label class="col-sm-1 col-form-label">:</label>
                             <div class="col-sm-9">
-                                <label class="col-form-label fw-bold text-white">New Delhi</label>
+                                <label class="col-form-label fw-bold text-white" ><span id="modalCity">Loading....</span></label>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label">Post Heading</label>
                             <label class="col-sm-1 col-form-label">:</label>
                             <div class="col-sm-9">
-                                <label class="col-form-label fw-bold text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti debitis, doloremque hic, quam tempore suscipit delectus mollitia provident maiores accusamus laboriosam.</label>
+                                <label class="col-form-label fw-bold text-white"><span id="modalPostHeading">Loading....</span></label>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label">Post Description</label>
                             <label class="col-sm-1 col-form-label">:</label>
                             <div class="col-sm-9">
-                                <label class="col-form-label fw-bold text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti debitis, doloremque hic, quam tempore suscipit delectus mollitia provident maiores accusamus laboriosam.</label>
+                                <label class="col-form-label fw-bold text-white"><span id="modalPostDesc">Loading....</span></label>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label">Model Age</label>
                             <label class="col-sm-1 col-form-label">:</label>
                             <div class="col-sm-9">
-                                <label class="col-form-label fw-bold text-white">25</label>
+                                <label class="col-form-label fw-bold text-white"><span id="modalAge">Loading....</span></label>
                             </div>
                         </div>
-                        <div class="mb-3 row">
-                            <label class="col-sm-2 col-form-label">Phone Number</label>
-                            <label class="col-sm-1 col-form-label">:</label>
-                            <div class="col-sm-9">
-                                <label class="col-form-label fw-bold text-white">2225554789</label>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label class="col-sm-2 col-form-label">WhatsApp Number</label>
-                            <label class="col-sm-1 col-form-label">:</label>
-                            <div class="col-sm-9">
-                                <label class="col-form-label fw-bold text-white">2225554789</label>
-                            </div>
-                        </div>
+                       
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label">Images</label>
                             <label class="col-sm-1 col-form-label">:</label>
@@ -165,7 +154,39 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
 <script>
-  
+    
+        function viewPostModal(param){
+            $(document).ready(function(){
+                
+            $.ajax({
+                        url: "{{ url('/viewPostData') }}",
+                        data: {
+                            id: param
+                        },
+                        success: function(res) {
+                            var dataGh = res.data;
+                            var serv = "";
+                            if(res.data.serviceType == 1)
+                            {
+                                serv ="Massage";
+                            }else if(res.data.serviceType == 2){
+                                serv ="Male Escort";
+                            }else if(res.data.serviceType == 3){
+                                serv ="Female Escort";
+                            }
+                            $('#modalService').html(serv);
+                            $('#modalState').html(res.data.state);
+                            $('#modalCity').html(res.data.city);
+                            $('#modalPostHeading').html(res.data.postHeading);
+                            $('#modalPostDesc').html(res.data.postDesc);
+                            $('#modalAge').html(res.data.modelAge);
+
+                        }
+                    });
+                })
+        }
+    
+  viewPostModal
 </script>
 
 @endsection

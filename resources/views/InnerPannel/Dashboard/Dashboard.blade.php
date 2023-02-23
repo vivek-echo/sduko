@@ -12,8 +12,8 @@
                     </span>
                     <div class="media-body">
                         <p class="mb-1">Total Posts</p>
-                        <h4 class="mb-0">150</h4>
-                        <span class="badge badge-primary">+3.5%</span>
+                        <h4 class="mb-0">{{$totalPost}}</h4>
+                        {{-- <span class="badge badge-primary">+3.5%</span> --}}
                     </div>
                 </div>
             </div>
@@ -28,8 +28,8 @@
                     </span>
                     <div class="media-body">
                         <p class="mb-1">Total Pending Posts</p>
-                        <h4 class="mb-0">150</h4>
-                        <span class="badge badge-warning">+3.5%</span>
+                        <h4 class="mb-0">{{$totalPending}}</h4>
+                        {{-- <span class="badge badge-warning">+3.5%</span> --}}
                     </div>
                 </div>
             </div>
@@ -44,8 +44,8 @@
                     </span>
                     <div class="media-body">
                         <p class="mb-1">Total Approved Posts</p>
-                        <h4 class="mb-0">150</h4>
-                        <span class="badge badge-success">+3.5%</span>
+                        <h4 class="mb-0">{{$totalApproved}}</h4>
+                        {{-- <span class="badge badge-success">+3.5%</span> --}}
                     </div>
                 </div>
             </div>
@@ -60,13 +60,13 @@
                     </span>
                     <div class="media-body">
                         <p class="mb-1">Total Rejected Posts</p>
-                        <h4 class="mb-0">150</h4>
-                        <span class="badge badge-danger">+3.5%</span>
+                        <h4 class="mb-0">{{$totalrejected}}</h4>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <?php if($userType == 1){ ?>
     <div class="col-xl-3 col-xxl-4 col-lg-6 col-sm-6">
         <div class="widget-stat card">
             <div class="card-body p-4">
@@ -76,13 +76,13 @@
                     </span>
                     <div class="media-body">
                         <p class="mb-1">Total Users</p>
-                        <h4 class="mb-0">150</h4>
-                        <span class="badge badge-info">+3.5%</span>
+                        <h4 class="mb-0">{{$totalUser}}</h4>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <?php  } ?>
     <div class="col-xl-3 col-xxl-4 col-lg-6 col-sm-6">
         <div class="widget-stat card">
             <div class="card-body p-4">
@@ -92,8 +92,7 @@
                     </span>
                     <div class="media-body">
                         <p class="mb-1">Total Models</p>
-                        <h4 class="mb-0">150</h4>
-                        <span class="badge badge-info">+3.5%</span>
+                        <h4 class="mb-0">{{$totalApproved}}</h4>
                     </div>
                 </div>
             </div>
