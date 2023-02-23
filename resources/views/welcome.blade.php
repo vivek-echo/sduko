@@ -23,7 +23,7 @@
 
 <body>
     <!-- preloader start here -->
-    <div class="preloader">
+    <div class="preloader" id="preLoad">
         <div class="preloader-inner">
             <div class="preloader-icon">
                 <span></span>
@@ -643,6 +643,7 @@
     <script>
           $(document).ready(function() {
             $('#showPostAddBtn').on('click',function(){
+                $('#preLoad').show();
                 $.ajax({
                     url: "{{ url('/getAddPost') }}",
                     success: function(res) {
@@ -651,28 +652,15 @@
                         for (var i = 0; i < postDataLength; i++) {
                             var image = '{{asset('storage/')}}'+'/'+res['data'][i]['image']+'';
                                 var hhh = '<img src="'+image+'"  alt="shop">';
+                                
                             // {{asset("storage/")}}
-                            var postDataKt = '<div class="col-lg-4 col-md-6 col-12"><div class="product-list-item"><div class="product-thumb"><div class="pro-thumb">'+hhh+'</div> </div> <div class="product-content"> <h5 class="mb-3"><a href="#" data-bs-toggle="modal" data-bs-target="#myModal">Bengaluru Myself kajal call girl service anytime booking VIP TOP BEST CALL GIRL SEX service available 24 horse available</a></h5> <h6 class="mb-3"> 21 YEARS | Escorts | Bangalore | Bengaluru  </h6> <p class="mb-3">WhatsApp MESAFE & SECURE HIGH CLASS SARVICE AFFORDABLE RATE HUNDRED PRESENT SATAFICATION UNLIMITED ENJOY MENT TIME FOR MODEL / TEEN ESCORT AGENCY* CALL USE HIGH CLASS LUXRY AND PREMIUM ESCORT ..</p>  <button class="default-btn reverse py-2 px-2 me-2" type="submit"><span><i   class="myicon-whatsapp"></i> WhatsApp</span></button> <button class="default-btn reverse py-2 px-2" type="submit"><span><i class="myicon-phone-call"></i> Call</span></button> </div> </div> </div>';
-                            
-                            // var
-                            
-                            // '<option value="' + res['data'][i]['state_name'] + '" >' +
-                            //     res['data'][i]['state_name'] + '</option>'
+                            var postDataKt = '<div class="col-lg-4 col-md-6 col-12"> <div class="product-list-item"> <div class="product-thumb"> <div class="pro-thumb"> '+hhh+' </div> </div> <div class="product-content"> <h5 class="mb-3"> <a href="#" data-bs-toggle="modal" data-bs-target="#myModal"> '+res['data'][i]['postHeading']+' </a> </h5> <h6 class="mb-3"> 21 YEARS | Escorts | Bangalore | Bengaluru </h6> <p class="mb-3">WhatsApp MESAFE & SECURE HIGH CLASS SARVICE AFFORDABLE RATE HUNDRED PRESENT SATAFICATION UNLIMITED ENJOY MENT TIME FOR MODEL / TEEN ESCORT AGENCY* CALL USE HIGH CLASS LUXRY AND PREMIUM ESCORT .. </p> <button class="default-btn reverse py-2 px-2 me-2" type="submit"> <span><i class="myicon-whatsapp"></i> WhatsApp</span>  </button> <button class="default-btn reverse py-2 px-2" type="submit"> <span><i class="myicon-phone-call"></i> Call</span> </button> </div> </div>  </div>';
+                          
                             postData.push(postDataKt);
                         }
-                        console.log(postData);
                         $('#postAddDataBind').html(postData.join(" "));
-                        // var optionState = [
-                        //     '<option value="" >--Select Religion--</option>'
-                        // ];
-                        // var optionLengthState = res['data'].length;
-
-                        // for (var i = 0; i < optionLengthState; i++) {
-                        //     var resOptionState = '<option value="' + res['data'][i]['state_name'] + '" >' +
-                        //         res['data'][i]['state_name'] + '</option>'
-                        //     optionState.push(resOptionState);
-                        // }
-                        // $('#stateId').html(optionState.join(" "));
+                        $('#preLoad').hide();
+                       
                     }
                 });
             })

@@ -28,8 +28,12 @@ class PostController extends Controller
         $respData['sl']= $key+1;
         $respData['pId']= $data->pId;
         $respData['postHeading']= $data->postHeading;
-        $respData['createdOn']= $data->createdOn;
-        $respData['status']= $data->status;
+        $respData['postDesc']= $data->postDesc;
+        $respData['modelAge']= $data->modelAge;
+        $respData['state']= $data->state;
+        $respData['city']= $data->city;
+        $respData['phoneNo']= $data->phoneNo;
+        $respData['whatsApp']= $data->whatsApp;
         $respData['image']= DB::table('postimage')->where('postId',$respData['pId'])->first()->image;
         array_push($respnse, $respData);
        }
