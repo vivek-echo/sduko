@@ -17,7 +17,7 @@ class PostController extends Controller
         $userId =Auth::user();
         
        $queryData = DB::table('posttable as PT')
-       ->where('PT.deletedFlag',0)->selectRaw('PT.pId,PT.postHeading,PT.createdOn,PT.status');
+       ->where('PT.deletedFlag',0)->selectRaw('PT.pId,PT.postHeading,PT.createdOn,PT.status,PT.postDesc,PT.modelAge,PT.state,PT.city,PT.phoneNo,PT.whatsApp');
        if($userId->userType != 1)
        {
         $queryData =$queryData->where('PT.userId',$userId->id);
@@ -28,6 +28,8 @@ class PostController extends Controller
         $respData['sl']= $key+1;
         $respData['pId']= $data->pId;
         $respData['postHeading']= $data->postHeading;
+        $respData['createdOn']= $data->createdOn;
+        $respData['status']= $data->status;
         $respData['postDesc']= $data->postDesc;
         $respData['modelAge']= $data->modelAge;
         $respData['state']= $data->state;
