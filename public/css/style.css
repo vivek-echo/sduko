@@ -28554,8 +28554,8 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
 /* .image-grid .image {
   overflow: hidden;
 } */
-.lightgallery .image .img-thumbnail {
-  background-color: #f7f7f7;
+#lightgallery .img-thumbnail:hover  {
+  background-color: #f24570;
   border: 1px solid #dee2e6;
 }
 /* .image-grid:hover img {

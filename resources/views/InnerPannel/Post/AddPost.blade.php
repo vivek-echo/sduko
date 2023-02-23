@@ -28,7 +28,7 @@
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label text-start">Service Type</label>
                                     <div class="col-sm-9">
-                                        <select name="" id="serviceType" class="form-select">
+                                        <select name="serviceType" id="serviceType" class="form-select">
                                             <option value="">--Select--</option>
                                             <option value="1">Massage</option>
                                             <option value="2">Male Escort</option>
