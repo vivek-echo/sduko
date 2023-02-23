@@ -133,13 +133,39 @@
                             <label class="col-sm-2 col-form-label">Images</label>
                             <label class="col-sm-1 col-form-label">:</label>
                             <div class="col-sm-9">
-                                <div id="outFile" class="row"><div class="col-sm-3 image position-relative">
-                                    <img class="img-thumbnail" src="{{asset('images/10.jpg')}}" width="200" alt="image">
-                                  </div><div class="col-sm-3 image position-relative">
-                                    <img class="img-thumbnail" src="{{asset('images/11.jpg')}}" width="200" alt="image">
-                                  </div><div class="col-sm-3 image position-relative">
-                                    <img class="img-thumbnail" src="{{asset('images/12.jpg')}}" width="200" alt="image">
-                                  </div></div>
+                                <div class="card-body px-0 pt-3 image-grid">
+                                    <div id="lightgallery" class="row gap-3">
+                                        <a href="{{ asset('images/10.jpg') }}" data-exthumbimage="{{ asset('images/10.jpg') }}" data-src="{{ asset('images/10.jpg') }}" class="col-lg-3 col-md-6 mb-4">
+                                            <img class="img-thumbnail" src="{{ asset('images/10.jpg') }}" alt="" style="width:100%;"/>
+                                        </a>
+                                        <a href="{{ asset('images/11.jpg') }}" data-exthumbimage="{{ asset('images/11.jpg') }}" data-src="{{ asset('images/11.jpg') }}" class="col-lg-3 col-md-6 mb-4">
+                                            <img class="img-thumbnail" src="{{ asset('images/11.jpg') }}" alt="" style="width:100%;" />
+                                        </a>
+                                        <a href="{{ asset('images/12.jpg') }}" data-exthumbimage="{{ asset('images/12.jpg') }}" data-src="{{ asset('images/12.jpg') }}" class="col-lg-3 col-md-6 mb-4">
+                                            <img class="img-thumbnail" src="{{ asset('images/12.jpg') }}" alt="" style="width:100%;" />
+                                        </a>
+                                    </div>
+                                </div>
+                                {{-- <div class="row image-grid">
+                                    <div class="col-sm-3 position-relative">
+                                        <div class="image">
+                                            <img class="" src="{{ asset('images/10.jpg') }}" width="200"
+                                                alt="image">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 position-relative">
+                                        <div class="image">
+                                            <img class="" src="{{ asset('images/11.jpg') }}" width="200"
+                                                alt="image">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 position-relative">
+                                        <div class="image">
+                                            <img class="" src="{{ asset('images/12.jpg') }}" width="200"
+                                                alt="image">
+                                        </div>
+                                    </div>
+                                </div> --}}
                             </div>
                         </div>
                     </form>

@@ -16,6 +16,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <link rel="stylesheet" href="vendor/chartist/css/chartist.min.css">
+    <link href="vendor/lightgallery/css/lightgallery.min.css" rel="stylesheet">
     <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
     {{-- <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet"> --}}
     <link href="vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
@@ -248,6 +249,7 @@
     <!-- Required vendors -->
     <script src="vendor/global/global.min.js"></script>
     <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="vendor/lightgallery/js/lightgallery-all.min.js"></script>
     {{-- <script src="vendor/chart.js/Chart.bundle.min.js"></script> --}}
 
     <!-- Chart piety plugin files -->
