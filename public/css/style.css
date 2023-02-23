@@ -8307,7 +8307,7 @@ a {
   box-shadow: none; }
 
 .text-primary {
-  color: #d8335c !important; }
+  color: #f24570 !important; }
 
 .bg-primary {
   background-color: var(--primary) !important; }
@@ -21204,7 +21204,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   background-color: #51A6F5; }
 
 .badge-primary {
-  background-color: var(--primary); }
+  background-color: #f24570; }
 
 .badge-warning {
   background-color: #FFAB2D; }
