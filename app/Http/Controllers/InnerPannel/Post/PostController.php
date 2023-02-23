@@ -17,9 +17,6 @@ class PostController extends Controller
         $userId =Auth::user();
         
        $queryData = DB::table('posttable as PT')
-    //    ->leftjoin('postimage as PI',function($q){
-    //     $q->on('PT.pId','=','PI.postId')->where('PT.deletedFlag',0);
-    //    })
        ->where('PT.deletedFlag',0)->selectRaw('PT.pId,PT.postHeading,PT.createdOn,PT.status');
        if($userId->userType != 1)
        {

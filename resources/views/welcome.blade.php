@@ -148,131 +148,21 @@
                             </div>
                             <div class="col-6">
                                 <div class="banner__inputlist">
-                                    <select>
-                                        <option value="all-regions" selected>All Regions</option>
-                                        <option value="delhi-region">Delhi</option>
-                                        <option value="andhra-pradesh">Andhra Pradesh</option>
-                                        <option value="assam">Assam</option>
-                                        <option value="bihar">Bihar</option>
-                                        <option value="chandigarh-region">Chandigarh</option>
-                                        <option value="chhattisgarh">Chhattisgarh</option>
-                                        <option value="dadra-nagar-haveli">Dadra and Nagar Haveli</option>
-                                        <option value="gujarat">Gujarat</option>
-                                        <option value="haryana">Haryana</option>
-                                        <option value="jharkhand">Jharkhand</option>
-                                        <option value="karnataka">Karnataka</option>
-                                        <option value="kerala-region">Kerala</option>
-                                        <option value="madhya-pradesh">Madhya Pradesh</option>
-                                        <option value="maharashtra">Maharashtra</option>
-                                        <option value="nagaland">Nagaland</option>
-                                        <option value="odisha">Odisha</option>
-                                        <option value="punjab">Punjab</option>
-                                        <option value="rajasthan">Rajasthan</option>
-                                        <option value="tamil-nadu">Tamil Nadu</option>
-                                        <option value="telangana">Telangana</option>
-                                        <option value="uttar-pradesh">Uttar Pradesh</option>
-                                        <option value="uttarakhand">Uttarakhand</option>
-                                        <option value="west-bengal">West Bengal</option>
-                                        <option value="goa-region">Goa</option>
-                                        <option value="jammu-kashmir">Jammu and Kashmir</option>
-                                        <option value="himachal-pradesh">Himachal Pradesh</option>
-                                        <option value="arunachal-pradesh">Arunachal Pradesh</option>
-                                        <option value="manipur">Manipur</option>
-                                        <option value="meghalaya">Meghalaya</option>
-                                        <option value="mizoram">Mizoram</option>
-                                        <option value="sikkim">Sikkim</option>
-                                        <option value="tripura">Tripura</option>
-                                        <option value="andaman-and-nicobar-islands">Andaman and Nicobar Islands
-                                        </option>
-                                        <option value="ladakh">Ladakh</option>
-                                        <option value="lakshadweep">Lakshadweep</option>
-                                        <option value="pondicherry-region">Pondicherry</option>
+                                    <select id="stateId">
+                                    
                                     </select>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="banner__inputlist">
-                                    <select>
-                                        <option value="" selected="selected">All Cities</option>
-                                        <option value="delhi">Delhi</option>
-                                        <option value="baner">Baner</option>
-                                        <option value="connaught-place">Connaught Place</option>
-                                        <option value="saket">Saket</option>
-                                        <option value="aerocity">Aerocity</option>
-                                        <option value="mahipalpur">Mahipalpur</option>
-                                        <option value="nehru-place">Nehru Place</option>
-                                        <option value="laxmi-nagar">Laxmi Nagar</option>
-                                        <option value="rohini">Rohini</option>
-                                        <option value="dwarka">Dwarka</option>
-                                        <option value="pitampura">Pitampura</option>
-                                        <option value="vasant-kunj">Vasant Kunj</option>
-                                        <option value="chattarpur">Chattarpur</option>
-                                        <option value="daryaganj">Daryaganj</option>
-                                        <option value="paharganj">Paharganj</option>
-                                        <option value="karol-bagh">Karol Bagh</option>
-                                        <option value="lajpat-nagar">Lajpat Nagar</option>
-                                        <option value="munirka">Munirka</option>
-                                        <option value="paschim-vihar">Paschim Vihar</option>
-                                        <option value="chhatarpur">Chhatarpur</option>
-                                        <option value="anand-lok">Anand Lok</option>
-                                        <option value="defence-colony">Defence Colony</option>
-                                        <option value="golf-links">Golf Links</option>
-                                        <option value="greater-kailash">Greater Kailash</option>
-                                        <option value="green-park">Green Park</option>
-                                        <option value="hauz-khas">Hauz Khas</option>
-                                        <option value="janakpuri">Janakpuri</option>
-                                        <option value="jor-bagh">Jor Bagh</option>
-                                        <option value="malviya-nagar">Malviya Nagar</option>
-                                        <option value="model-town">Model Town</option>
-                                        <option value="moti-bagh">Moti Bagh</option>
-                                        <option value="shahdara">Shahdara</option>
-                                        <option value="shalimar-bagh">Shalimar Bagh</option>
-                                        <option value="uttam-nagar">Uttam Nagar</option>
-                                        <option value="vasant-vihar">Vasant Vihar</option>
-                                        <option value="adarsh-nagar">Adarsh Nagar</option>
-                                        <option value="ashok-vihar">Ashok Vihar</option>
-                                        <option value="narela">Narela</option>
-                                        <option value="gulabi-bagh">Gulabi Bagh</option>
-                                        <option value="kamla-nagar">Kamla Nagar</option>
-                                        <option value="kashmiri-gate">Kashmiri Gate</option>
-                                        <option value="sadar-bazar">Sadar Bazar</option>
-                                        <option value="sarai-rohilla">Sarai Rohilla</option>
-                                        <option value="shakti-nagar">Shakti Nagar</option>
-                                        <option value="timarpur">Timarpur</option>
-                                        <option value="wazirabad">Wazirabad</option>
-                                        <option value="dilshad-garden">Dilshad Garden</option>
-                                        <option value="chandni-chowk">Chandni Chowk</option>
-                                        <option value="mori-gate">Mori Gate</option>
-                                        <option value="tis-hazari">Tis Hazari</option>
-                                        <option value="barakhamba-road">Barakhamba Road</option>
-                                        <option value="mayur-vihar">Mayur Vihar</option>
-                                        <option value="mehrauli">Mehrauli</option>
-                                        <option value="safdarjung-enclave">Safdarjung Enclave</option>
-                                        <option value="sangam-vihar">Sangam Vihar</option>
-                                        <option value="south-extension">South Extension</option>
-                                        <option value="kadapa">Kadapa</option>
-                                        <option value="tirupati">Tirupati</option>
-                                        <option value="vijayawada">Vijayawada</option>
-                                        <option value="visakhapatnam">Visakhapatnam</option>
-                                        <option value="amaravati">Amaravati</option>
-                                        <option value="guntur">Guntur</option>
-                                        <option value="nellore">Nellore</option>
-                                        <option value="ongole">Ongole</option>
-                                        <option value="chittoor">Chittoor</option>
-                                        <option value="kurnool">Kurnool</option>
-                                        <option value="guntakal">Guntakal</option>
-                                        <option value="tadepalligudem">Tadepalligudem</option>
-                                        <option value="dharmavaram">Dharmavaram</option>
-                                        <option value="hindupur">Hindupur</option>
-                                        <option value="adoni">Adoni</option>
-                                        <option value="rajampet">Rajampet</option>
-                                        <option value="tirumala">Tirumala</option>
+                                    <select id="cityId">
+                                        <option value="">--Select City--</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col">
-                                <button type="submit" class="default-btn reverse d-block"><span>Search
-                                        Now</span></button>
+                                <a href="javascript:void(0);"  class="default-btn reverse d-block" id="showPostAddBtn"><span>Search
+                                        Now</span></a>
                             </div>
                         </div>
                     </div>
@@ -281,7 +171,37 @@
         </div>
     </div>
     <!-- ================> About section end here <================== -->
-
+<div class="shop-page padding-bottom aside-bg">
+        <div class="container">
+           
+            <div class="row justify-content-center pb-15 pt-3 wow fadeInUp" data-wow-duration="2s">
+                <div class="col-lg-12 col-12">
+                    <article>
+                     
+                        <div class="shop-product-wrap list row justify-content-center g-4" id="postAddDataBind">
+                        </div>
+                        {{-- <ul class="default-pagination lab-ul mt-5 justify-content-center">
+                            <li>
+                                <a href="#"><i class="fa-solid fa-angle-left"></i></a>
+                            </li>
+                            <li>
+                                <a href="#">01</a>
+                            </li>
+                            <li>
+                                <a href="#" class="active">02</a>
+                            </li>
+                            <li>
+                                <a href="#">03</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa-solid fa-angle-right"></i></a>
+                            </li>
+                        </ul> --}}
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ================> Member section start here <================== -->
 
@@ -452,121 +372,7 @@
             </div>
         </div>
     </div>
-    <div class="shop-page padding-bottom aside-bg">
-        <div class="container">
-            <div class="section__header style-2 text-center wow fadeInUp" data-wow-duration="1.5s">
-                <!-- <h2>Only True People</h2> -->
-                <p>Bangalore Independent Escorts - Call Girls Services</p>
-            </div>
-            <div class="row justify-content-center pb-15 pt-3 wow fadeInUp" data-wow-duration="2s">
-                <div class="col-lg-12 col-12">
-                    <article>
-                        <div class="shop-title d-flex flex-wrap justify-content-between">
-                            <p>Showing 01 - 12 of 139 Results</p>
-                            <div class="product-view-mode">
-                                <a class="active" data-target="list"><i class="fa-solid fa-list"></i></a>
-                                <!-- <a data-target="list"><i class="fa-solid fa-list"></i></a> -->
-                            </div>
-                        </div>
-                        <div class="shop-product-wrap list row justify-content-center g-4">
-                            <div class="col-lg-4 col-md-6 col-12">
-                                <div class="product-list-item">
-                                    <div class="product-thumb">
-                                        <div class="pro-thumb">
-                                            <img src="{{ asset('landingpage/images/search/list1.jpg') }}"
-                                                alt="shop">
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h5 class="mb-3"><a href="#" data-bs-toggle="modal" data-bs-target="#myModal">Bengaluru Myself kajal call
-                                                girl service anytime booking VIP TOP BEST CALL GIRL SEX service
-                                                available 24 horse available</a></h5>
-                                        <h6 class="mb-3">
-                                            21 YEARS | Escorts | Bangalore | Bengaluru
-                                        </h6>
-                                        <p class="mb-3">WhatsApp MESAFE & SECURE HIGH CLASS SARVICE AFFORDABLE RATE
-                                            HUNDRED PRESENT SATAFICATION UNLIMITED ENJOY MENT TIME FOR MODEL / TEEN
-                                            ESCORT AGENCY* CALL USE HIGH CLASS LUXRY AND PREMIUM ESCORT ..</p>
-                                        <button class="default-btn reverse py-2 px-2 me-2" type="submit"><span><i
-                                                    class="myicon-whatsapp"></i> WhatsApp</span></button>
-                                        <button class="default-btn reverse py-2 px-2" type="submit"><span><i
-                                                    class="myicon-phone-call"></i> Call</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-12">
-                                <div class="product-list-item">
-                                    <div class="product-thumb">
-                                        <div class="pro-thumb">
-                                            <img src="{{ asset('landingpage/images/search/list2.jpg') }}"
-                                                alt="shop">
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h5 class="mb-3"><a href="search-details.html">Bengaluru Myself kajal call
-                                                girl service anytime booking VIP TOP BEST CALL GIRL SEX service
-                                                available 24 horse available</a></h5>
-                                        <h6 class="mb-3">
-                                            21 YEARS | Escorts | Bangalore | Bengaluru
-                                        </h6>
-                                        <p class="mb-3">WhatsApp MESAFE & SECURE HIGH CLASS SARVICE AFFORDABLE RATE
-                                            HUNDRED PRESENT SATAFICATION UNLIMITED ENJOY MENT TIME FOR MODEL / TEEN
-                                            ESCORT AGENCY* CALL USE HIGH CLASS LUXRY AND PREMIUM ESCORT ..</p>
-                                        <button class="default-btn reverse py-2 px-2 me-2" type="submit"><span><i
-                                                    class="myicon-whatsapp"></i> WhatsApp</span></button>
-                                        <button class="default-btn reverse py-2 px-2" type="submit"><span><i
-                                                    class="myicon-phone-call"></i> Call</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-12">
-                                <div class="product-list-item">
-                                    <div class="product-thumb">
-                                        <div class="pro-thumb">
-                                            <img src="{{ asset('landingpage/images/search/list3.jpg') }}"
-                                                alt="shop">
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h5 class="mb-3"><a href="search-details.html">Bengaluru Myself kajal call
-                                                girl service anytime booking VIP TOP BEST CALL GIRL SEX service
-                                                available 24 horse available</a></h5>
-                                        <h6 class="mb-3">
-                                            21 YEARS | Escorts | Bangalore | Bengaluru
-                                        </h6>
-                                        <p class="mb-3">WhatsApp MESAFE & SECURE HIGH CLASS SARVICE AFFORDABLE RATE
-                                            HUNDRED PRESENT SATAFICATION UNLIMITED ENJOY MENT TIME FOR MODEL / TEEN
-                                            ESCORT AGENCY* CALL USE HIGH CLASS LUXRY AND PREMIUM ESCORT ..</p>
-                                        <button class="default-btn reverse py-2 px-2 me-2" type="submit"><span><i
-                                                    class="myicon-whatsapp"></i> WhatsApp</span></button>
-                                        <button class="default-btn reverse py-2 px-2" type="submit"><span><i
-                                                    class="myicon-phone-call"></i> Call</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="default-pagination lab-ul mt-5 justify-content-center">
-                            <li>
-                                <a href="#"><i class="fa-solid fa-angle-left"></i></a>
-                            </li>
-                            <li>
-                                <a href="#">01</a>
-                            </li>
-                            <li>
-                                <a href="#" class="active">02</a>
-                            </li>
-                            <li>
-                                <a href="#">03</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa-solid fa-angle-right"></i></a>
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!-- ================> Member section end here <================== -->
 
 
@@ -833,6 +639,89 @@
     <script src="{{ asset('landingpage/js/vendor/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('landingpage/js/plugins.js') }}"></script>
     <script src="{{ asset('landingpage/js/main.js') }}"></script>
+
+    <script>
+          $(document).ready(function() {
+            $('#showPostAddBtn').on('click',function(){
+                $.ajax({
+                    url: "{{ url('/getAddPost') }}",
+                    success: function(res) {
+                        var postData = [];
+                        var postDataLength = res['data'].length;
+                        for (var i = 0; i < postDataLength; i++) {
+                            var image = '{{asset('storage/')}}'+'/'+res['data'][i]['image']+'';
+                                var hhh = '<img src="'+image+'"  alt="shop">';
+                            // {{asset("storage/")}}
+                            var postDataKt = '<div class="col-lg-4 col-md-6 col-12"><div class="product-list-item"><div class="product-thumb"><div class="pro-thumb">'+hhh+'</div> </div> <div class="product-content"> <h5 class="mb-3"><a href="#" data-bs-toggle="modal" data-bs-target="#myModal">Bengaluru Myself kajal call girl service anytime booking VIP TOP BEST CALL GIRL SEX service available 24 horse available</a></h5> <h6 class="mb-3"> 21 YEARS | Escorts | Bangalore | Bengaluru  </h6> <p class="mb-3">WhatsApp MESAFE & SECURE HIGH CLASS SARVICE AFFORDABLE RATE HUNDRED PRESENT SATAFICATION UNLIMITED ENJOY MENT TIME FOR MODEL / TEEN ESCORT AGENCY* CALL USE HIGH CLASS LUXRY AND PREMIUM ESCORT ..</p>  <button class="default-btn reverse py-2 px-2 me-2" type="submit"><span><i   class="myicon-whatsapp"></i> WhatsApp</span></button> <button class="default-btn reverse py-2 px-2" type="submit"><span><i class="myicon-phone-call"></i> Call</span></button> </div> </div> </div>';
+                            
+                            // var
+                            
+                            // '<option value="' + res['data'][i]['state_name'] + '" >' +
+                            //     res['data'][i]['state_name'] + '</option>'
+                            postData.push(postDataKt);
+                        }
+                        console.log(postData);
+                        $('#postAddDataBind').html(postData.join(" "));
+                        // var optionState = [
+                        //     '<option value="" >--Select Religion--</option>'
+                        // ];
+                        // var optionLengthState = res['data'].length;
+
+                        // for (var i = 0; i < optionLengthState; i++) {
+                        //     var resOptionState = '<option value="' + res['data'][i]['state_name'] + '" >' +
+                        //         res['data'][i]['state_name'] + '</option>'
+                        //     optionState.push(resOptionState);
+                        // }
+                        // $('#stateId').html(optionState.join(" "));
+                    }
+                });
+            })
+
+          $.ajax({
+                    url: "{{ url('/getStateWelcome') }}",
+                    success: function(res) {
+                        var optionState = [
+                            '<option value="" >--Select Religion--</option>'
+                        ];
+                        var optionLengthState = res['data'].length;
+
+                        for (var i = 0; i < optionLengthState; i++) {
+                            var resOptionState = '<option value="' + res['data'][i]['state_name'] + '" >' +
+                                res['data'][i]['state_name'] + '</option>'
+                            optionState.push(resOptionState);
+                        }
+                        $('#stateId').html(optionState.join(" "));
+                    }
+                });
+
+                $('#stateId').on('change', function() {
+                    var optionCity = '<option value="" >Loading....</option>';
+                    $('#cityId').html(optionCity);
+                    var stateId = $('#stateId').val();
+                    $.ajax({
+                        url: "{{ url('/getCityWelcome') }}",
+                        data: {
+                            stateId: stateId
+                        },
+                        success: function(res) {
+                            optionCity = [
+                                '<option value="" >--Select City--</option>'
+                            ];
+                            var optionLengthCity = res['data'].length;
+
+                            for (var i = 0; i < optionLengthCity; i++) {
+                                var resOptionCity = '<option value="' + res['data'][i][
+                                    'city_name'
+                                ] + '" >' + res['data'][i]['city_name'] + '</option>'
+                                optionCity.push(resOptionCity);
+                            }
+                          
+                            $('#cityId').html(optionCity.join(" "));
+                        }
+                    });
+                })
+                })
+    </script>
 </body>
 
 </html>

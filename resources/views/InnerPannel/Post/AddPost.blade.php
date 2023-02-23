@@ -262,7 +262,7 @@
                                 ] + '" >' + res['data'][i]['city_name'] + '</option>'
                                 optionCity.push(resOptionCity);
                             }
-                            console.log(optionCity.join(" "));
+                            
                             $('#cityId').html(optionCity.join(" "));
                         }
                     });
