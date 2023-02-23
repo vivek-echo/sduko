@@ -16,25 +16,35 @@
         </ul>
 
         <div class="table-responsive mt-4">
-            <table  class="table table-responsive-md" >
+            <table  class="table table-bordered table-responsive-md" >
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Image</th>
-                        <th>Post Heading</th>
-                        <th>Date</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                        <th class="text-center"><b>#</b></th>
+                        <th class="text-center"><b>Image</b></th>
+                        <th class="text-center"><b>Post Heading<b></th>
+                        <th class="text-center"><b>Date<b></th>
+                        <th class="text-center"><b>Status</b></th>
+                        <th class="text-center"><b>Action</b></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach($pageData as $key=>$val){ ?>
                         <tr>
-                            <td><?php echo $val['sl']; ?></td>
-                            <td><img class="rounded" width="120" src="{{ asset('storage/'.$val['image'].'')}}" alt=""></td>
-                            <td><?php echo $val['postHeading']; ?></td>
-                            <td><?php echo $val['createdOn']; ?></td>
-                            <td><?php echo "cjnshcbnh" ?></td>
+                            <td class="text-center"><?php echo $val['sl']; ?></td>
+                            <td class="text-center"><img class="rounded" width="120" src="{{ asset('storage/'.$val['image'].'')}}" alt=""></td>
+                            <td class="text-center"><?php echo $val['postHeading']; ?></td>
+                            <td class="text-center"><?php echo $val['createdOn']; ?></td>
+                            <td class="text-center"><?php 
+                                if($val['status'] == 0){
+                                    echo "Pending";
+                                }elseif ($val['status'] == 1) {
+                                    echo "Approved";
+                                }elseif($val['status'] == 1)
+                                {
+                                    echo "Rejected";
+                                }
+                            
+                            ?></td>
                             <td></td>
                         </tr>
                         <?php }?>
@@ -43,12 +53,12 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>#</th>
-                        <th>Image</th>
-                        <th>Post Heading</th>
-                        <th>Date</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                        <th class="text-center">#</th>
+                        <th class="text-center">Image</th>
+                        <th class="text-center">Post Heading</th>
+                        <th class="text-center">Date</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Action</th>
                     </tr>
                 </tfoot>
             </table>

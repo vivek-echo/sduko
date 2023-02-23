@@ -20,7 +20,7 @@ class PostController extends Controller
     //    ->leftjoin('postimage as PI',function($q){
     //     $q->on('PT.pId','=','PI.postId')->where('PT.deletedFlag',0);
     //    })
-       ->where('PT.deletedFlag',0)->selectRaw('PT.pId,PT.postHeading,PT.createdOn');
+       ->where('PT.deletedFlag',0)->selectRaw('PT.pId,PT.postHeading,PT.createdOn,PT.status');
        if($userId->userType != 1)
        {
         $queryData =$queryData->where('PT.userId',$userId->id);
@@ -32,6 +32,7 @@ class PostController extends Controller
         $respData['pId']= $data->pId;
         $respData['postHeading']= $data->postHeading;
         $respData['createdOn']= $data->createdOn;
+        $respData['status']= $data->status;
         $respData['image']= DB::table('postimage')->where('postId',$respData['pId'])->first()->image;
         array_push($respnse, $respData);
        }
@@ -61,7 +62,7 @@ class PostController extends Controller
                 $res['postDesc'] = $getData['postDescription'];
                 $res['modelAge'] = $getData['modelAge'];
                 $res['phoneNo'] = $getData['phoneNo'];
-                $res['WhatsApp'] = $getData['WhatsApp'];
+                $res['whatsApp'] = $getData['WhatsApp'];
                 $res['createdOn'] = now();
                 $insertId = DB::table('posttable')->insertGetId($res);
                 $resp = [];
