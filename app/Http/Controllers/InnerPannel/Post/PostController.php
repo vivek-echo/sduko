@@ -59,6 +59,7 @@ class PostController extends Controller
             $userId =Auth::user()->id;
             $tran =  DB::transaction(function () use ($getData, $userId): void {
                 $res['userId'] =  $userId;
+                $res['serviceType'] = $getData['serviceType'];
                 $res['state'] = $getData['stateId'];
                 $res['city'] = $getData['cityId'];
                 $res['postHeading'] = $getData['postHeading'];

@@ -36,6 +36,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/getState', [App\Http\Controllers\Controller::class, 'getState']);
     Route::get('/getCity', [App\Http\Controllers\Controller::class, 'getCity']);
     Route::get('storage/{filename}', function ($filename) {
+        dd($filename);
         $path = storage_path('public/' . $filename);
 
         if (!File::exists($path)) {
