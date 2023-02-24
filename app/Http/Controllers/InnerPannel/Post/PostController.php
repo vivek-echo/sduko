@@ -113,4 +113,21 @@ class PostController extends Controller
         'images'=>$images
     ]);
     }
+
+    public function deleteAdd(){
+        $getData = request()->all();
+        $update = DB::table('posttable as PT')->where('PT.deletedFlag',0)->where('pID',$getData['id'])->update(['deletedFlag'=>1]);
+        if($update){
+            $status = true;
+            $msg = "Post Deleted .";
+        }else{
+            $status = false;
+            $msg = "Something went wrong. Please try again later.";
+        }
+
+        return response()->json([
+            'status' =>$status,
+            'message'=>$msg
+        ]);
+    }
 }

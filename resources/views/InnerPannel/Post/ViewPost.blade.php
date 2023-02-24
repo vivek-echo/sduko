@@ -1,8 +1,8 @@
 @extends('InnerPannel.Layout.MainLayout')
 
 @section('content')
-    <link href="vendor/lightgallery/css/lightgallery.min.css" rel="stylesheet">
-   
+    <link href="{{ asset('vendor/sweetalert2/dist/sweetalert2.min.css') }}" rel="stylesheet">
+
     <div class="card">
         <div class="card-header">
             <h5 class="card-title">Post Your Ads</h5>
@@ -52,10 +52,14 @@
                                         class="btn btn-info shadow btn-xs sharp me-1" data-bs-toggle="modal"
                                         data-bs-target=".view-Modal" onclick="viewPostModal(<?php echo $val['pId']; ?>)"><i
                                             class="fas fa-eye"></i></a>
-                                    <a href="#" title="Delete" class="btn btn-danger shadow btn-xs sharp me-1"><i
-                                            class="fa fa-trash"></i></a>
+
+
+                                    <a href="javascript:void(0);" title="Delete"
+                                        onclick="viewDeleteModal(<?php echo $val['pId']; ?>)"
+                                        class="btn btn-danger shadow btn-xs sharp me-1"><i class="fa fa-trash"></i></a>
                                     <a href="#" title="Take Action" class="btn btn-primary shadow btn-xs sharp"><i
                                             class="fas fa-cog"></i></a>
+
                                 </div>
                             </td>
                         </tr>
@@ -84,7 +88,7 @@
     <div class="modal fade view-Modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
-                <div id="fullpage" onclick="this.style.display='none';" witdth = "200px">
+                <div id="fullpage" onclick="this.style.display='none';" witdth="200px">
                     <div class="btn-align-right">
                         <a href="javascript:void(0);" onclick="closeFullScreen()"><button class="btn-close"></button> </a>
                     </div>
@@ -151,7 +155,7 @@
                                 <label class="col-sm-1 col-form-label">:</label>
                                 <div class="col-sm-9">
                                     <div class="card-body px-0 pt-3 image-grid">
-                                        <div  class="row gap-3 lightgallery">
+                                        <div class="row gap-3 lightgallery">
                                             {{-- <a href="{{ asset('images/10.jpg') }}"
                                                 data-exthumbimage="{{ asset('images/10.jpg') }}"
                                                 data-src="{{ asset('images/10.jpg') }}" class="col-lg-3 col-md-6 mb-4">
@@ -207,8 +211,50 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="{{ asset('vendor/sweetalert2/dist/sweetalert2.min.js') }}"></script>
+    <script src="js/main.js"></script>
 
     <script>
+        
+function viewDeleteModal(param) {
+            $(document).ready(function() {
+                swal({
+                        title: "Are you sure?",
+                        text: "Are you Sure You want to Delete this Post?",
+                        type: "info",
+                        showCancelButton: !0,
+                        closeOnConfirm: !1,
+                        showLoaderOnConfirm: !0
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $.ajax({
+                                url: "{{ url('/deleteAdd') }}",
+                                data: {
+                                    id: param
+                                },
+                                success: function(res) {
+                                    if (res.status == true) {
+                                        swal("Successfull", res.message, "success")
+                                            .then(function(res) {
+                                                if (res) {
+                                                    var loc = window.location;
+                                                    window.location = loc
+                                                        .origin +
+                                                        "/viewPost"
+                                                }
+                                            });
+                                    } else {
+
+                                        swal("Error", res.message, "error")
+                                    }
+                                }
+                            });
+                        }
+                    })
+            })
+
+        }
         function viewPostModal(param) {
             $(document).ready(function() {
 
@@ -240,7 +286,8 @@
                             var imageLink = 'uploads/PostImages' + '/' + res.images[i].image + '';
                             var img = '<img class="img-thumbnail" src="' + imageLink +
                                 '" style="width:100%;"  alt="image"/>'
-                            var imageBin = '<a href="javascript:void(0);" onclick="getPics()" data-exthumbimage="' +
+                            var imageBin =
+                                '<a href="javascript:void(0);" onclick="getPics()" data-exthumbimage="' +
                                 imageLink + '" data-src="' + imageLink +
                                 '" class="col-lg-3 col-md-6 mb-4"> ' + img + ' </a>';
                             imageBindArr.push(imageBin);
@@ -253,21 +300,22 @@
         }
 
         function getPics() { //just for this demo
-        const imgs = document.querySelectorAll('.lightgallery img');
-        const fullPage = document.querySelector('#fullpage');
+            const imgs = document.querySelectorAll('.lightgallery img');
+            const fullPage = document.querySelector('#fullpage');
 
-        imgs.forEach(img => {
-            img.addEventListener('click', function() {
-                fullPage.style.backgroundImage = 'url(' + img.src + ')';
-                fullPage.style.display = 'block';
+            imgs.forEach(img => {
+                img.addEventListener('click', function() {
+                    fullPage.style.backgroundImage = 'url(' + img.src + ')';
+                    fullPage.style.display = 'block';
+                });
             });
-        });
-    }
-    function closeFullScreen(){
-        $(document).ready(function() {
-            $('#fullpage').css('display','none');
-        });
-    }
+        }
+
+        function closeFullScreen() {
+            $(document).ready(function() {
+                $('#fullpage').css('display', 'none');
+            });
+        }
     </script>
     <script src="vendor/lightgallery/js/lightgallery-all.min.js"></script>
 @endsection

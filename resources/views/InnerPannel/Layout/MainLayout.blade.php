@@ -114,12 +114,12 @@
                             </div>
                         </div>
                         <ul class="navbar-nav header-right main-notification">
-                            <li class="nav-item dropdown notification_dropdown">
+                            {{-- <li class="nav-item dropdown notification_dropdown">
                                 <a class="nav-link bell dz-theme-mode" href="#">
                                     <i id="icon-light" class="fas fa-sun"></i>
                                     <i id="icon-dark" class="fas fa-moon"></i>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item dropdown notification_dropdown">
                                 <a class="nav-link bell dz-fullscreen" href="#">
                                     <svg id="icon-full" viewBox="0 0 24 24" width="20" height="20"

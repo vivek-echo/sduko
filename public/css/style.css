@@ -301,7 +301,8 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  /* background-color: var(--bs-body-bg); */
+  background-color: #2C254A;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
@@ -8888,7 +8889,8 @@ a {
   position: absolute;
   left: 0;
   top: 0;
-  background-color: var(--nav-headbg);
+  /* background-color: var(--nav-headbg); */
+  background-color: #3b3363;
   transition: all .2s ease;
   z-index: 10; }
   .nav-header .logo-abbr {
@@ -8911,7 +8913,8 @@ a {
     justify-content: flex-start;
     align-items: center;
     font-size: 1.125rem;
-    color: #fff;
+    /* color: #fff; */
+    color: #3b3363;
     text-decoration: none;
     padding-left: 20px;
     padding-right: 50px;
@@ -9068,7 +9071,7 @@ a {
   z-index: 4;
   padding-left: 17.5rem;
   transition: all .2s ease;
-  background: var(--headerbg);
+  background: #3b3363;
   box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.05); }
   .header .header-content {
     height: 100%; }
@@ -10485,7 +10488,8 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   top: 4.5rem;
   padding-top: 0;
   z-index: 4;
-  background-color: var(--sidebar-bg);
+  /* background-color: var(--sidebar-bg); */
+  background-color: #3b3363;
   transition: all .2s ease;
   box-shadow: 0px 15px 30px 0px rgba(0, 0, 0, 0.02); }
   @media only screen and (max-width: 1199px) {
@@ -22094,7 +22098,8 @@ button {
 
 .card {
   margin-bottom: 1.875rem;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: #3B3363;
   transition: all .5s ease-in-out;
   position: relative;
   border: 0rem solid transparent;
@@ -28570,6 +28575,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
     -o-transform: scale(1.2);
     transform: scale(1.2);
 } */
+
 
 .btn-align-right {
   float: right;
