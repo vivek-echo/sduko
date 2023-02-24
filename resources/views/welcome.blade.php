@@ -18,7 +18,22 @@
     <link rel="stylesheet" href="{{ asset('landingpage/css/lightcase.css') }}">
     <link rel="stylesheet" href="{{ asset('landingpage/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('landingpage/css/custom-icomoon/style.css') }}">
-
+    <style>
+        #fullpage {
+            display: none;
+            position: absolute;
+            z-index: 9999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40vw;
+            height: 50vh;
+            background-size: contain;
+            background-repeat: no-repeat no-repeat;
+            background-position: center center;
+            background-color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -622,6 +637,95 @@
         </div>
     </div>
 
+    <div class="modal fade view-Modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div id="fullpage" onclick="this.style.display='none';" witdth="200px">
+                    <div class="btn-align-right">
+                        <a href="javascript:void(0);" onclick="closeFullScreen()"><button class="btn-close"></button> </a>
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <h5 class="modal-title">Ad Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="basic-form">
+                        <form>
+                            <div class="mb-3 row">
+                                <label class="col-sm-2 col-form-label">Service Type</label>
+                                <label class="col-sm-1 col-form-label">:</label>
+                                <div class="col-sm-9">
+                                    <label class="col-form-label fw-bold text-white"><span
+                                            id="Loading....modalService"></span></label>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-2 col-form-label">Region</label>
+                                <label class="col-sm-1 col-form-label">:</label>
+                                <div class="col-sm-9">
+                                    <label class="col-form-label fw-bold text-white"><span
+                                            id="modalState">Loading....</span></label>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-2 col-form-label">City</label>
+                                <label class="col-sm-1 col-form-label">:</label>
+                                <div class="col-sm-9">
+                                    <label class="col-form-label fw-bold text-white"><span
+                                            id="modalCity">Loading....</span></label>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-2 col-form-label">Post Heading</label>
+                                <label class="col-sm-1 col-form-label">:</label>
+                                <div class="col-sm-9">
+                                    <label class="col-form-label fw-bold text-white"><span
+                                            id="modalPostHeading">Loading....</span></label>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-2 col-form-label">Post Description</label>
+                                <label class="col-sm-1 col-form-label">:</label>
+                                <div class="col-sm-9">
+                                    <label class="col-form-label fw-bold text-white"><span
+                                            id="modalPostDesc">Loading....</span></label>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-2 col-form-label">Model Age</label>
+                                <label class="col-sm-1 col-form-label">:</label>
+                                <div class="col-sm-9">
+                                    <label class="col-form-label fw-bold text-white"><span
+                                            id="modalAge">Loading....</span></label>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row">
+                                <label class="col-sm-2 col-form-label">Images</label>
+                                <label class="col-sm-1 col-form-label">:</label>
+                                <div class="col-sm-9">
+                                    <div class="card-body px-0 pt-3 image-grid">
+                                        <div class="row gap-3 lightgallery">
+                                           
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 
     <!-- All Needed JS -->
     <script src="{{ asset('landingpage/js/vendor/jquery-3.6.0.min.js') }}"></script>
@@ -638,7 +742,68 @@
     <script src="{{ asset('landingpage/js/main.js') }}"></script>
 
     <script>
+         function getPics() { //just for this demo
+            const imgs = document.querySelectorAll('.lightgallery img');
+            const fullPage = document.querySelector('#fullpage');
+
+            imgs.forEach(img => {
+                img.addEventListener('click', function() {
+                    fullPage.style.backgroundImage = 'url(' + img.src + ')';
+                    fullPage.style.display = 'block';
+                });
+            });
+        }
+
+        function closeFullScreen() {
+            $(document).ready(function() {
+                $('#fullpage').css('display', 'none');
+            });
+        }
+         function viewPostModal(param) {
+            $(document).ready(function() {
+
+                $.ajax({
+                    url: "{{ url('/viewPostDataWelcome') }}",
+                    data: {
+                        id: param
+                    },
+                    success: function(res) {
+                        var dataGh = res.data;
+                        var serv = "";
+                        if (res.data.serviceType == 1) {
+                            serv = "Massage";
+                        } else if (res.data.serviceType == 2) {
+                            serv = "Male Escort";
+                        } else if (res.data.serviceType == 3) {
+                            serv = "Female Escort";
+                        }
+                        $('#modalService').html(serv);
+                        $('#modalState').html(res.data.state);
+                        $('#modalCity').html(res.data.city);
+                        $('#modalPostHeading').html(res.data.postHeading);
+                        $('#modalPostDesc').html(res.data.postDesc);
+                        $('#modalAge').html(res.data.modelAge);
+
+                        var imageDataLength = res.images.length;
+                        var imageBindArr = [];
+                        for (var i = 0; i < imageDataLength; i++) {
+                            var imageLink = 'uploads/PostImages' + '/' + res.images[i].image + '';
+                            var img = '<img class="img-thumbnail" src="' + imageLink +
+                                '" style="width:100%;"  alt="image"/>'
+                            var imageBin =
+                                '<a href="javascript:void(0);" onclick="getPics()" data-exthumbimage="' +
+                                imageLink + '" data-src="' + imageLink +
+                                '" class="col-lg-3 col-md-6 mb-4"> ' + img + ' </a>';
+                            imageBindArr.push(imageBin);
+                        }
+                        $('.lightgallery').html(imageBindArr.join(" "));
+
+                    }
+                });
+            })
+        }
           $(document).ready(function() {
+            
             $('#showPostAddBtn').on('click',function(){
                 var serviceType = $('#serviceType').val();
                 var stateId = $('#stateId').val();
@@ -658,7 +823,7 @@
                         for (var i = 0; i < postDataLength; i++) {
                             var image = '{{asset('uploads/PostImages/')}}'+'/'+res['data'][i]['image']+'';
                                 var hhh = '<img src="'+image+'"  alt="shop">';
-                            var postDataKt = '<div class="col-lg-4 col-md-6 col-12"> <div class="product-list-item"> <div class="product-thumb"> <div class="pro-thumb"> '+hhh+' </div> </div> <div class="product-content"> <h5 class="mb-3"> <a href="#" data-bs-toggle="modal" data-bs-target="#myModal"> '+res['data'][i]['postHeading']+' </a> </h5> <h6 class="mb-3"> '+res['data'][i]['modelAge']+' | '+res['data'][i]['typeS']+' | '+res['data'][i]['state']+' | '+res['data'][i]['city']+' </h6> <p class="mb-3">'+res['data'][i]['postDesc']+' </p> <button class="default-btn reverse py-2 px-2 me-2" type="submit"> <span><i class="myicon-whatsapp"></i> WhatsApp</span>  </button> <button class="default-btn reverse py-2 px-2" type="submit"> <span><i class="myicon-phone-call"></i> Call</span> </button> </div> </div>  </div>';
+                            var postDataKt = '<div class="col-lg-4 col-md-6 col-12"> <div class="product-list-item"> <div class="product-thumb"> <div class="pro-thumb"> '+hhh+' </div> </div> <div class="product-content"> <h5 class="mb-3"> <a href="javascript:void(0);" data-bs-toggle="modal" onclick="viewPostModal('+res['data'][i]['pId']+')" data-bs-target=".view-Modal"> '+res['data'][i]['postHeading']+' </a> </h5> <h6 class="mb-3"> '+res['data'][i]['modelAge']+' | '+res['data'][i]['typeS']+' | '+res['data'][i]['state']+' | '+res['data'][i]['city']+' </h6> <p class="mb-3">'+res['data'][i]['postDesc']+' </p> <button class="default-btn reverse py-2 px-2 me-2" type="submit"> <span><i class="myicon-whatsapp"></i> WhatsApp</span>  </button> <button class="default-btn reverse py-2 px-2" type="submit"> <span><i class="myicon-phone-call"></i> Call</span> </button> </div> </div>  </div>';
                           
                             postData.push(postDataKt);
                         }

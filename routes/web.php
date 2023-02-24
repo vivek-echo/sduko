@@ -26,11 +26,13 @@ Route::get('/updatePassword', [App\Http\Controllers\Auth\RegisterController::cla
 Route::get('/getStateWelcome', [App\Http\Controllers\Controller::class, 'getState']);
 Route::get('/getCityWelcome', [App\Http\Controllers\Controller::class, 'getCity']);
 Route::get('/getAddPost', [App\Http\Controllers\Controller::class, 'getAddPost']);
+Route::get('/viewPostDataWelcome', [App\Http\Controllers\InnerPannel\Post\PostController::class, 'viewPostData']);
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [App\Http\Controllers\InnerPannel\Dashboard\DashboardController::class, 'index']);
     Route::get('/getProfileData', [App\Http\Controllers\InnerPannel\Dashboard\DashboardController::class, 'getProfileData']);
     Route::get('/viewPost', [App\Http\Controllers\InnerPannel\Post\PostController::class, 'index']);
     Route::get('/viewPostData', [App\Http\Controllers\InnerPannel\Post\PostController::class, 'viewPostData']);
+    
     Route::get('/deleteAdd', [App\Http\Controllers\InnerPannel\Post\PostController::class, 'deleteAdd']);
     Route::match(['GET', 'POST'], '/AddPost', [App\Http\Controllers\InnerPannel\Post\PostController::class, 'addPost']);
     Route::match(['GET', 'POST'], '/uploadData', [App\Http\Controllers\InnerPannel\Post\PostController::class, 'uploadData']);
