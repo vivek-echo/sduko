@@ -134,22 +134,19 @@
                         <div class="row align-items-center row-cols-xl-5 row-cols-lg-3 row-cols-sm-2 row-cols-1">
                             <div class="col-6">
                                 <div class="banner__inputlist">
-                                    <select>
-                                        <option selected>Escorts</option>
-                                        <option value="01">Male Escorts</option>
-                                        <option value="02">Massage</option>
+                                    <select id="serviceType">
+                                        <option value="0">Escorts</option>
+                                        <option value="1">Massage</option>
+                                        <option value="2">Male Escort</option>
+                                        <option value="3">Female Escort</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <div class="banner__inputlist">
-                                    <input type="text" placeholder="Search Here...">
-                                </div>
-                            </div>
+                            
                             <div class="col-6">
                                 <div class="banner__inputlist">
                                     <select id="stateId">
-                                    
+                                        <option value="">Loading....</option>
                                     </select>
                                 </div>
                             </div>
@@ -643,16 +640,25 @@
     <script>
           $(document).ready(function() {
             $('#showPostAddBtn').on('click',function(){
+                var serviceType = $('#serviceType').val();
+                var stateId = $('#stateId').val();
+                var cityId = $('#cityId').val();
                 $('#preLoad').show();
                 $.ajax({
                     url: "{{ url('/getAddPost') }}",
+                    data:{
+                        'serviceType': serviceType,
+                        'stateId':stateId,
+                        'cityId':cityId,
+
+                    },
                     success: function(res) {
                         var postData = [];
                         var postDataLength = res['data'].length;
                         for (var i = 0; i < postDataLength; i++) {
                             var image = '{{asset('uploads/PostImages/')}}'+'/'+res['data'][i]['image']+'';
                                 var hhh = '<img src="'+image+'"  alt="shop">';
-                            var postDataKt = '<div class="col-lg-4 col-md-6 col-12"> <div class="product-list-item"> <div class="product-thumb"> <div class="pro-thumb"> '+hhh+' </div> </div> <div class="product-content"> <h5 class="mb-3"> <a href="#" data-bs-toggle="modal" data-bs-target="#myModal"> '+res['data'][i]['postHeading']+' </a> </h5> <h6 class="mb-3"> 21 YEARS | Escorts | Bangalore | Bengaluru </h6> <p class="mb-3">WhatsApp MESAFE & SECURE HIGH CLASS SARVICE AFFORDABLE RATE HUNDRED PRESENT SATAFICATION UNLIMITED ENJOY MENT TIME FOR MODEL / TEEN ESCORT AGENCY* CALL USE HIGH CLASS LUXRY AND PREMIUM ESCORT .. </p> <button class="default-btn reverse py-2 px-2 me-2" type="submit"> <span><i class="myicon-whatsapp"></i> WhatsApp</span>  </button> <button class="default-btn reverse py-2 px-2" type="submit"> <span><i class="myicon-phone-call"></i> Call</span> </button> </div> </div>  </div>';
+                            var postDataKt = '<div class="col-lg-4 col-md-6 col-12"> <div class="product-list-item"> <div class="product-thumb"> <div class="pro-thumb"> '+hhh+' </div> </div> <div class="product-content"> <h5 class="mb-3"> <a href="#" data-bs-toggle="modal" data-bs-target="#myModal"> '+res['data'][i]['postHeading']+' </a> </h5> <h6 class="mb-3"> '+res['data'][i]['modelAge']+' | '+res['data'][i]['typeS']+' | '+res['data'][i]['state']+' | '+res['data'][i]['city']+' </h6> <p class="mb-3">'+res['data'][i]['postDesc']+' </p> <button class="default-btn reverse py-2 px-2 me-2" type="submit"> <span><i class="myicon-whatsapp"></i> WhatsApp</span>  </button> <button class="default-btn reverse py-2 px-2" type="submit"> <span><i class="myicon-phone-call"></i> Call</span> </button> </div> </div>  </div>';
                           
                             postData.push(postDataKt);
                         }
