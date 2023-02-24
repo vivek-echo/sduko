@@ -21,7 +21,21 @@
     {{-- <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet"> --}}
     <link href="vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
+    <style>
+        #fullpage {
+            display: none;
+            position: absolute;
+            z-index: 9999;
+            /* top: 0;
+            left: 0; */
+            width: 40vw;
+            height: 50vh;
+            background-size: contain;
+            background-repeat: no-repeat no-repeat;
+            background-position: center center;
+            background-color: black;
+        }
+    </style>
 </head>
 
 <body>

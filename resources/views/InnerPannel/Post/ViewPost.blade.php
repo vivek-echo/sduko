@@ -1,7 +1,9 @@
 @extends('InnerPannel.Layout.MainLayout')
 
 @section('content')
-<link href="vendor/lightgallery/css/lightgallery.min.css" rel="stylesheet">
+    <link href="vendor/lightgallery/css/lightgallery.min.css" rel="stylesheet">
+   
+    <div id="fullpage" onclick="this.style.display='none';" witdth = "200px"><a href="javascript:void(0);" onclick="closeFullScreen()">closeFullScreen</a></div>
     <div class="card">
         <div class="card-header">
             <h5 class="card-title">Post Your Ads</h5>
@@ -32,7 +34,7 @@
                         <tr>
                             <td class="text-center"><?php echo $val['sl']; ?></td>
                             <td class="text-center"><img class="rounded" width="120"
-                                    src="{{ asset('storage/' . $val['image'] . '') }}" alt=""></td>
+                                    src="{{ asset('uploads/PostImages/' . $val['image'] . '') }}" alt=""></td>
                             <td class="text-center"><?php echo $val['postHeading']; ?></td>
                             <td class="text-center"><?php echo $val['createdOn']; ?></td>
                             <td class="text-center"><?php
@@ -145,7 +147,7 @@
                                 <label class="col-sm-1 col-form-label">:</label>
                                 <div class="col-sm-9">
                                     <div class="card-body px-0 pt-3 image-grid">
-                                        <div id="lightgallery" class="row gap-3 lightgallery">
+                                        <div  class="row gap-3 lightgallery">
                                             {{-- <a href="{{ asset('images/10.jpg') }}"
                                                 data-exthumbimage="{{ asset('images/10.jpg') }}"
                                                 data-src="{{ asset('images/10.jpg') }}" class="col-lg-3 col-md-6 mb-4">
@@ -191,15 +193,15 @@
                         </form>
                     </div>
                 </div>
-                
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-        
+
     </div>
-   
+
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
     <script>
@@ -234,7 +236,9 @@
                             var imageLink = 'uploads/PostImages' + '/' + res.images[i].image + '';
                             var img = '<img class="img-thumbnail" src="' + imageLink +
                                 '" style="width:100%;"  alt="image"/>'
-                                var imageBin = '<a href="'+imageLink+'" data-exthumbimage="'+imageLink+'" data-src="'+imageLink+'" class="col-lg-3 col-md-6 mb-4"> '+img+' </a>';
+                            var imageBin = '<a href="javascript:void(0);" onclick="getPics()" data-exthumbimage="' +
+                                imageLink + '" data-src="' + imageLink +
+                                '" class="col-lg-3 col-md-6 mb-4"> ' + img + ' </a>';
                             imageBindArr.push(imageBin);
                         }
                         $('.lightgallery').html(imageBindArr.join(" "));
@@ -244,7 +248,22 @@
             })
         }
 
-        
+        function getPics() { //just for this demo
+        const imgs = document.querySelectorAll('.lightgallery img');
+        const fullPage = document.querySelector('#fullpage');
+
+        imgs.forEach(img => {
+            img.addEventListener('click', function() {
+                fullPage.style.backgroundImage = 'url(' + img.src + ')';
+                fullPage.style.display = 'block';
+            });
+        });
+    }
+    function closeFullScreen(){
+        $(document).ready(function() {
+            $('#fullpage').css('display','none');
+        });
+    }
     </script>
     <script src="vendor/lightgallery/js/lightgallery-all.min.js"></script>
 @endsection
