@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- site favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('landingpage/images/favicon.png') }}')}}">
+    <link rel="icon" type="image/png" href="{{ asset('landingpage/images/favicon.png') }}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- All stylesheet and icons css  -->
@@ -815,6 +815,7 @@
                         'serviceType': serviceType,
                         'stateId':stateId,
                         'cityId':cityId,
+                        'pageLvl':1
 
                     },
                     success: function(res) {
