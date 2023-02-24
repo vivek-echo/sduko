@@ -1,9 +1,9 @@
 @extends('InnerPannel.Layout.MainLayout')
 
 @section('content')
-<link href="{{ asset('vendor/sweetalert2/dist/sweetalert2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/sweetalert2/dist/sweetalert2.min.css') }}" rel="stylesheet">
     <div class="card">
-        
+
         <div class="card-header">
             <h5 class="card-title">Post Your Ads</h5>
         </div>
@@ -17,7 +17,24 @@
             </ul>
             <div class="col-xl-8 col-lg-12">
                 <div class="card">
-                    {!! Session::has('msg') ? Session::get("msg") : '' !!}
+                    <div class="alert alert-dismissible alert-alt fade show  <?php if (Session::get('status') == 1) {
+                        echo 'alert-success';
+                    }
+                    if (Session::get('status') == 2) {
+                        echo 'alert-danger ';
+                    } ?>" style="display:<?php  if(Session::get('status') ) { echo "block"; } else { echo "none" ; } ?> ;">
+
+                        <?php if(Session::get('status') == 1){ ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close">
+                        </button>
+                        <strong>Success!</strong> {!! Session::has('msg') ? Session::get('msg') : '' !!}
+                        <?php }if(Session::get('status') == 2){  ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close">
+                        </button>
+                        <strong>Error!</strong> {!! Session::has('msg') ? Session::get('msg') : '' !!}
+                        <?php } ?>
+                    </div>
+
                     {{-- <div class="card-header">
                         <h4 class="card-title">Vertical Form</h4>
                     </div> --}}
@@ -262,7 +279,7 @@
                                 ] + '" >' + res['data'][i]['city_name'] + '</option>'
                                 optionCity.push(resOptionCity);
                             }
-                            
+
                             $('#cityId').html(optionCity.join(" "));
                         }
                     });

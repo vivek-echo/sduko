@@ -85,7 +85,7 @@ class PostController extends Controller
 
             if (is_null($tran)) {
                 $status = 1;
-                $msg = "Post Updated successfully";
+                $msg = "Add has been posted.";
             }
             DB::commit($trans);
         } catch (\Exception $t) {
@@ -98,9 +98,9 @@ class PostController extends Controller
             $status = 2;
             $msg = "Something went wrong. please try again later";
         }
-        $res['status']=$status;
-        $res['msg']=$msg;
+      
         session()->flash('msg', $msg);
+        session()->flash('status', $status);
         return redirect('/AddPost');
     }
     public function viewPostData(){
