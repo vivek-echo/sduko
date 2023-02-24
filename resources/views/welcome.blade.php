@@ -146,8 +146,8 @@
             <div class="section__wrapper wow fadeInUp" data-wow-duration="1.5s">
                 <form action="#">
                     <div class="banner__list">
-                        <div class="row align-items-center row-cols-xl-5 row-cols-lg-3 row-cols-sm-2 row-cols-1">
-                            <div class="col-6">
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
                                 <div class="banner__inputlist">
                                     <select id="serviceType">
                                         <option value="0">Escorts</option>
@@ -158,22 +158,22 @@
                                 </div>
                             </div>
                             
-                            <div class="col-6">
+                            <div class="col-sm-3">
                                 <div class="banner__inputlist">
                                     <select id="stateId">
                                         <option value="">Loading....</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-sm-3">
                                 <div class="banner__inputlist">
                                     <select id="cityId">
                                         <option value="">--Select City--</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col">
-                                <a href="javascript:void(0);"  class="default-btn reverse d-block" id="showPostAddBtn"><span>Search
+                            <div class="col-sm-3">
+                                <a href="javascript:void(0);"  class="default-btn reverse d-block text-center" id="showPostAddBtn"><span>Search
                                         Now</span></a>
                             </div>
                         </div>
@@ -642,7 +642,7 @@
             <div class="modal-content">
                 <div id="fullpage" onclick="this.style.display='none';" witdth="200px">
                     <div class="btn-align-right">
-                        <a href="javascript:void(0);" onclick="closeFullScreen()"><button class="btn-close"></button> </a>
+                        <a href="javascript:void(0);" onclick="closeFullScreen()"><i class="myicon-x"></i></a>
                     </div>
                 </div>
                 <div class="modal-header">

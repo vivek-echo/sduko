@@ -57,7 +57,9 @@
                                     <a href="javascript:void(0);" title="Delete"
                                         onclick="viewDeleteModal(<?php echo $val['pId']; ?>)"
                                         class="btn btn-danger shadow btn-xs sharp me-1"><i class="fa fa-trash"></i></a>
-                                    <a href="#" title="Take Action" class="btn btn-primary shadow btn-xs sharp"><i
+                                        
+                                    <a href="#" title="Take Action" class="btn btn-primary shadow btn-xs sharp" data-bs-toggle="modal"
+                                    data-bs-target=".view-action"><i
                                             class="fas fa-cog"></i></a>
 
                                 </div>
@@ -196,6 +198,52 @@
                                         </div>
                                     </div>
                                 </div> --}}
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    {{-- VIEW ACTION MODAL --}}
+    <div class="modal fade view-action" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div id="fullpage" onclick="this.style.display='none';" witdth="200px">
+                    <div class="btn-align-right">
+                        <a href="javascript:void(0);" onclick="closeFullScreen()"><button class="btn-close"></button> </a>
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <h5 class="modal-title">Take Action</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="basic-form">
+                        <form>
+                            <div class="mb-3 row">
+                                <label class="col-sm-2 col-form-label">Status</label>
+                                <label class="col-sm-1 col-form-label">:</label>
+                                <div class="col-sm-9">
+                                    <select name="statusType" id="statusType" class="form-select">
+                                        <option value="1">Approved</option>
+                                        <option value="2">Rejected</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-2 col-form-label">Remarks</label>
+                                <label class="col-sm-1 col-form-label">:</label>
+                                <div class="col-sm-9">
+                                    <textarea rows="4" class="form-control" id="remarks" name="remarks"></textarea>
                                 </div>
                             </div>
                         </form>

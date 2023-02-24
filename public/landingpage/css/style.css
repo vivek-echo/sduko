@@ -6581,4 +6581,45 @@ a[class*=lightcase-icon-] {
   list-style-type: disc;
 }
 
-/*# sourceMappingURL=style.css.map */
+
+
+.position-custom-cross {
+  position: absolute;
+  top: -12px;
+  right: 5px;
+  font-size: 2rem;
+}
+
+/* .image-grid .image {
+  overflow: hidden;
+} */
+.lightgallery .img-thumbnail:hover {
+  background-color: #f24570;
+  transition: all .2s ease;
+-webkit-transition: all .2s ease;
+-o-transition: all .2s ease;
+-moz-transition: all .2s ease;
+-ms-transition: all .2s ease; }
+/* .image-grid:hover img {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+} */
+
+
+.btn-align-right {
+  float: right;
+  padding: 7px 10px;
+}
+
+/* .btn-close {
+  background: none;
+  font-family: "Font Awesome 5 Free";
+} */
