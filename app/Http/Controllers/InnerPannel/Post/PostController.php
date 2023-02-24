@@ -17,7 +17,7 @@ class PostController extends Controller
         $userId =Auth::user();
         
        $queryData = DB::table('posttable as PT')
-       ->where('PT.deletedFlag',0)->selectRaw('PT.pId,PT.postHeading,PT.createdOn,PT.status,PT.postDesc,PT.modelAge,PT.state,PT.city,PT.phoneNo,PT.whatsApp,PT.serviceType,PT.status');
+       ->where('PT.deletedFlag',0)->selectRaw('PT.pId,PT.userId,PT.postHeading,PT.createdOn,PT.status,PT.postDesc,PT.modelAge,PT.state,PT.city,PT.phoneNo,PT.whatsApp,PT.serviceType,PT.status');
        if($userId->userType != 1)
        {
         $queryData =$queryData->where('PT.userId',$userId->id);
@@ -37,6 +37,9 @@ class PostController extends Controller
         $respData['city']= $data->city;
         $respData['phoneNo']= $data->phoneNo;
         $respData['whatsApp']= $data->whatsApp;
+        $respData['userType']= $userId->userType;
+        $respData['userId']= $userId->id;
+        $respData['userIdPost']= $data->userId;
         $respData['image']= DB::table('postimage')->where('postId',$respData['pId'])->where('deletedFlag',0)->first()->image;
         array_push($respnse, $respData);
        }
@@ -129,5 +132,24 @@ class PostController extends Controller
             'status' =>$status,
             'message'=>$msg
         ]);
+    }
+
+    public function actionPost(){
+        $getData = request()->all();
+        $update = DB::table('posttable as PT')->where('PT.deletedFlag',0)->where('pID',$getData['postId'])->update(['status'=>$getData['statusType'] ,'remarks'=>$getData['remarks']]);
+        $sts = ($getData['statusType'] == 1)? "Approved" : "Rejected";
+        if($update){
+            $status = true;
+            $msg = 'Post '.$sts.' Successfully. ';
+        }else{
+            $status = false;
+            $msg = "Something went wrong. Please try again later.";
+        }
+
+        return response()->json([
+            'status' =>$status,
+            'message'=>$msg
+        ]);
+    
     }
 }

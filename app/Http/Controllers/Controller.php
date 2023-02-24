@@ -51,7 +51,7 @@ class Controller extends BaseController
     {
         $getData = request()->all();
         $queryData = DB::table('posttable as PT')
-            ->where('PT.deletedFlag', 0)->selectRaw('PT.pId,PT.postHeading,PT.createdOn,PT.status,PT.modelAge,PT.postDesc,PT.state,PT.city,PT.whatsApp,PT.phoneNo,PT.serviceType');
+            ->where('PT.deletedFlag', 0)->where('status',1)->selectRaw('PT.pId,PT.postHeading,PT.createdOn,PT.status,PT.modelAge,PT.postDesc,PT.state,PT.city,PT.whatsApp,PT.phoneNo,PT.serviceType');
 
         if($getData['serviceType'] != 0 ){
             $queryData = $queryData->where('PT.serviceType',$getData['serviceType']);
