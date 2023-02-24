@@ -21,6 +21,15 @@
     <link href="{{ asset('vendor/sweetalert2/dist/sweetalert2.min.css') }}" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <style>
+        .layout-image {
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            z-index: -1;
+        }
+    </style>
+
 </head>
 
 <body class="vh-100" style="background :  center / cover no-repeat url('{{asset('landingPage/images/banner/bg-3.jpg')}}')">
@@ -31,9 +40,12 @@
             <div class="sk-child sk-bounce3"></div>
         </div>
     </div>
+    <div class="layout-image">
+        <img src="http://localhost:8000/landingPage/images/banner/ss.png" alt="" width="40%">
+   </div>
     <div class="authincation h-100">
         <div class="container h-100">
-            <div class="row justify-content-center h-100 align-items-center">
+            <div class="row justify-content-end h-100 align-items-center">
                 <div class="col-md-6">
                     <div class="authincation-content">
                         <div class="row no-gutters">
@@ -41,7 +53,7 @@
                                 <div class="auth-form">
                                     <div class="text-center mb-3">
                                         <a href="/" class="brand-logo">
-                                            Place for logo
+                                            <img src="{{asset('images/safe69-dark.png')}}" alt="" style="height:50px">
                                         </a>
                                     </div>
                                     <h4 class="text-center mb-4">Sign up your account</h4>
