@@ -26,8 +26,9 @@
             display: none;
             position: absolute;
             z-index: 9999;
-            /* top: 0;
-            left: 0; */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 40vw;
             height: 50vh;
             background-size: contain;

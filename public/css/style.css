@@ -28570,3 +28570,8 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
     -o-transform: scale(1.2);
     transform: scale(1.2);
 } */
+
+.btn-align-right {
+  float: right;
+  padding: 7px 10px;
+}

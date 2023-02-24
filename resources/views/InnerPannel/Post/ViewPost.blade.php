@@ -3,7 +3,6 @@
 @section('content')
     <link href="vendor/lightgallery/css/lightgallery.min.css" rel="stylesheet">
    
-    <div id="fullpage" onclick="this.style.display='none';" witdth = "200px"><a href="javascript:void(0);" onclick="closeFullScreen()">closeFullScreen</a></div>
     <div class="card">
         <div class="card-header">
             <h5 class="card-title">Post Your Ads</h5>
@@ -85,6 +84,11 @@
     <div class="modal fade view-Modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
+                <div id="fullpage" onclick="this.style.display='none';" witdth = "200px">
+                    <div class="btn-align-right">
+                        <a href="javascript:void(0);" onclick="closeFullScreen()"><button class="btn-close"></button> </a>
+                    </div>
+                </div>
                 <div class="modal-header">
                     <h5 class="modal-title">Ad Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal">
